@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "sources": {
+      "puntos": "https://datos.ciudaddecorrientes.gov.ar/dataset/recoleccion-en-puntos-verdes",
+      "ruleros": "https://datos.ciudaddecorrientes.gov.ar/dataset/reciclando_juntos_ruleros",
+      "localizacion": "https://datos.ciudaddecorrientes.gov.ar/dataset/puntos_verdes_contenedores"
+    },
+    "note": "Histórico del CSV entregado; no describe recolección actual ni toda la ciudad."
+  },
+  "puntos": {
+    "totalKg": 8437.213,
+    "eventKg": 4303.163,
+    "eventShare": 51.002,
+    "records": 213,
+    "groups": [
+      {
+        "name": "Eventos",
+        "kg": 4303.163,
+        "records": 16
+      },
+      {
+        "name": "Parque Camba Cua",
+        "kg": 1028.5,
+        "records": 56
+      },
+      {
+        "name": "Plaza Libertad",
+        "kg": 1991.5,
+        "records": 75
+      },
+      {
+        "name": "Plaza Torrent",
+        "kg": 898.0,
+        "records": 40
+      },
+      {
+        "name": "Santa Catalina",
+        "kg": 166.05,
+        "records": 23
+      },
+      {
+        "name": "Sin identificar",
+        "kg": 50.0,
+        "records": 3
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2019-01",
+        "kg": 487.184,
+        "records": 5
+      },
+      {
+        "month": "2019-02",
+        "kg": null,
+        "records": 0
+      },
+      {
+        "month": "2019-03",
+        "kg": 43.884,
+        "records": 2
+      },
+      {
+        "month": "2019-04",
+        "kg": 1.5,
+        "records": 1
+      },
+      {
+        "month": "2019-05",
+        "kg": 2.785,
+        "records": 1
+      },
+      {
+        "month": "2019-06",
+        "kg": null,
+        "records": 0
+      },
+      {
+        "month": "2019-07",
+        "kg": 54.5,
+        "records": 5
+      },
+      {
+        "month": "2019-08",
+        "kg": 28.5,
+        "records": 3
+      },
+      {
+        "month": "2019-09",
+        "kg": 307.05,
+        "records": 17
+      },
+      {
+        "month": "2019-10",
+        "kg": 427.5,
+        "records": 20
+      },
+      {
+        "month": "2019-11",
+        "kg": 350.5,
+        "records": 13
+      },
+      {
+        "month": "2019-12",
+        "kg": 408.0,
+        "records": 15
+      },
+      {
+        "month": "2020-01",
+        "kg": 4518.31,
+        "records": 39
+      },
+      {
+        "month": "2020-02",
+        "kg": 590.0,
+        "records": 23
+      },
+      {
+        "month": "2020-03",
+        "kg": 35.0,
+        "records": 3
+      },
+      {
+        "month": "2020-04",
+        "kg": 55.0,
+        "records": 3
+      },
+      {
+        "month": "2020-05",
+        "kg": 112.0,
+        "records": 7
+      },
+      {
+        "month": "2020-06",
+        "kg": 144.5,
+        "records": 7
+      },
+      {
+        "month": "2020-07",
+        "kg": 350.5,
+        "records": 18
+      },
+      {
+        "month": "2020-08",
+        "kg": 394.5,
+        "records": 22
+      },
+      {
+        "month": "2020-09",
+        "kg": 126.0,
+        "records": 9
+      }
+    ],
+    "period": {
+      "from": "2019-01-17",
+      "to": "2020-09-13"
+    }
+  },
+  "ruleros": {
+    "totalKg": 7388.80898,
+    "records": 293,
+    "modes": [
+      {
+        "name": "a puerta",
+        "kg": 6460.55398,
+        "records": 160
+      },
+      {
+        "name": "rulero",
+        "kg": 928.255,
+        "records": 133
+      }
+    ],
+    "invalidDates": [
+      "0202/09/06"
+    ],
+    "missingHouseholds": 293
+  },
+  "locations": [
+    {
+      "name": "Plaza Libertad",
+      "address": "Yrigoyen y Perú",
+      "lat": -27.4701357107625,
+      "lon": -58.82176329962,
+      "historicalKg": 1991.5,
+      "historicalRecords": 75
+    },
+    {
+      "name": "Parque Camba Cuá",
+      "address": "9 de Julio al 400",
+      "lat": -27.4659346439166,
+      "lon": -58.8453391180389,
+      "historicalKg": 1028.5,
+      "historicalRecords": 56
+    },
+    {
+      "name": "Plaza Torrent",
+      "address": "Belgrano y Catamarca",
+      "lat": -27.4723249691878,
+      "lon": -58.8335091202332,
+      "historicalKg": 898.0,
+      "historicalRecords": 40
+    },
+    {
+      "name": "Parque Mitre",
+      "address": "Alvear y Pilú Goméz",
+      "lat": -27.460251896500036,
+      "lon": -58.82753849287481,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Plaza Vera",
+      "address": "Pasaje Agustín Gonzalez",
+      "lat": -27.467274894913544,
+      "lon": -58.83689631702941,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Plazoleta Evita",
+      "address": "Av. Sarmiento y Maipú",
+      "lat": -27.477736480241862,
+      "lon": -58.83015206707526,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Mil Viviendas",
+      "address": "Pedro Crespo y Cosquín",
+      "lat": -27.494162304776868,
+      "lon": -58.82914048367264,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Pirayuí",
+      "address": "Av. Cuba entre Ojeda y Barrios",
+      "lat": -27.506241975385056,
+      "lon": -58.78144410999848,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Laguna Seca",
+      "address": "Larrea entre las Piedras y Resoagli",
+      "lat": -27.49051750349028,
+      "lon": -58.80422034432778,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº San Martín",
+      "address": "Pio XII y Lavalle",
+      "lat": -27.47706973480502,
+      "lon": -58.83654701622039,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº San Gerónimo",
+      "address": "Av. Laprida y Caracas",
+      "lat": -27.475400987109435,
+      "lon": -58.78852173238297,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº San José",
+      "address": "Pje. Manuel Acevedo y Darregueira",
+      "lat": -27.48354138551515,
+      "lon": -58.79703023942857,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Plaza Belgrano",
+      "address": "Pago Largo y Lavalle",
+      "lat": -27.475192739162768,
+      "lon": -58.84991073890948,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Delegación Madariaga",
+      "address": "Av. Raúl Alfonsín 3801",
+      "lat": -27.47333973661693,
+      "lon": -58.804756718078494,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Santa Catalina",
+      "address": "Odín Fleitas y Ramón Sixto Ríos",
+      "lat": -27.52336342082861,
+      "lon": -58.8034633638009,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Santa Teresita",
+      "address": "General Paz 3100",
+      "lat": -27.481626406544745,
+      "lon": -58.81268159240668,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº 17 de Agosto",
+      "address": "Lavalle y Milán",
+      "lat": -27.485951915668664,
+      "lon": -58.78430044835081,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Cacique Canindeyú",
+      "address": "Av. Sarmiento 2501",
+      "lat": -27.487739193320675,
+      "lon": -58.83062708672671,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Bº Anahí",
+      "address": "Cristo Obrero y Esteban Bajac",
+      "lat": -27.4647120140256,
+      "lon": -58.79840833832072,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Plaza Presidente Arturo Illia",
+      "address": "Río de Janeiro y Renacimiento",
+      "lat": -27.49633931732867,
+      "lon": -58.79293413399602,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Plaza Los Constituyentes",
+      "address": "Ricardo Gutiérrez y Congreso",
+      "lat": -27.492763938570103,
+      "lon": -58.83456749531907,
+      "historicalKg": null,
+      "historicalRecords": null
+    },
+    {
+      "name": "Plaza Primera Junta",
+      "address": "C. Granaderos y México",
+      "lat": -27.46912860889257,
+      "lon": -58.81445815922801,
+      "historicalKg": null,
+      "historicalRecords": null
+    }
+  ]
+}

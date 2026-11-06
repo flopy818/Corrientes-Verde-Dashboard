@@ -1,0 +1,24 @@
+{
+  "raw": {
+    "barrios": 140,
+    "distinct_barrio_names": 138,
+    "census": 319,
+    "population": 354005.0,
+    "spaces": 293
+  },
+  "computed": {
+    "no_space_by_primary_assignment": 68,
+    "no_intersection_green": 67,
+    "unassigned_space_ids": [
+      261,
+      3005,
+      4000
+    ],
+    "crossing_spaces": 16,
+    "sum_population_allocated": 335817,
+    "sum_space_area_m2": 3976749,
+    "sum_green_intersection_m2": 1176585,
+    "zero_population_barrio_records": 0,
+    "barrio_overlap_warning": "Potential overlaps in barrio geometries; rates are area-weighted census approximations, not official barrio population."
+  }
+}
