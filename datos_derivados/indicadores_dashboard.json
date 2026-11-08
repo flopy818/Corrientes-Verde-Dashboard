@@ -281,8 +281,8 @@
       "total_m2": 3976749.1597,
       "top5": [
         {
-          "nombre": "(sin barrio declarado)",
-          "area_m2": 2777567.1278
+          "nombre": "Reserva Natural Santa Catalina",
+          "area_m2": 2771672.7936
         },
         {
           "nombre": "ARAZATI",
@@ -301,11 +301,11 @@
           "area_m2": 82007.825
         }
       ],
-      "top5_pct": 82.076207,
+      "top5_pct": 81.927987,
       "todos": [
         {
-          "nombre": "(sin barrio declarado)",
-          "area_m2": 2777567.1278
+          "nombre": "Reserva Natural Santa Catalina",
+          "area_m2": 2771672.7936
         },
         {
           "nombre": "ARAZATI",
@@ -474,6 +474,10 @@
         {
           "nombre": "UNIVERSITARIO",
           "area_m2": 5950.8271
+        },
+        {
+          "nombre": "Otros registros sin barrio declarado",
+          "area_m2": 5894.3342
         },
         {
           "nombre": "MOLINA PUNTA",
@@ -800,7 +804,7 @@
           "area_m2": 5950.8271
         },
         {
-          "nombre": "(sin barrio declarado)",
+          "nombre": "Otros registros sin barrio declarado",
           "area_m2": 5894.3342
         },
         {
@@ -933,7 +937,7 @@
         }
       ]
     },
-    "criterio": "Agrupación por nombre_barrio declarado en espacios_verdes.csv: superficie completa de cada geometría. No corresponde a intersecciones espaciales con límites territoriales."
+    "criterio": "Suma de superficies completas por nombre_barrio declarado en el CSV. Como excepción de presentación, la reserva GID 4000 se muestra por nombre propio, sin adjudicarle barrio; los restantes registros sin barrio declarado permanecen separados. No es una intersección geográfica."
   },
   "proximidad": {
     "descripcion": "Distancia euclidiana mínima del centroide geométrico de cada radio censal a un polígono del inventario. Población del radio acumulada si el centroide cumple el umbral.",
@@ -2235,11 +2239,11 @@
       "caracter": "principal",
       "archivo": "datos_originales/espacios_verdes.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/espacios-verdes",
-      "fecha_actualizacion_dataset_indexada": "2025-10-01",
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": null,
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2026-11-03",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "barrios",
@@ -2247,55 +2251,55 @@
       "archivo": "datos_originales/barrios.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios",
       "recurso_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/a3b229c5-08d8-4ca4-908e-d72b63eb295f",
-      "fecha_actualizacion_dataset_indexada": "2026-03-26",
-      "fecha_actualizacion_recurso_indexada": "2025-10-01",
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": null,
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2025-10-01",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "densidad_poblacional",
       "caracter": "complementaria",
       "archivo": "datos_originales/densidad_poblacional.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/fe281850-2a92-4e61-81cd-4db3bb9598f5",
-      "fecha_actualizacion_dataset_indexada": "2026-03-26",
-      "fecha_actualizacion_recurso_indexada": "2025-10-01",
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": "Censal histórico; año exacto por confirmar con fuente primaria",
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2025-10-01",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "puntos_verdes_reciclaje",
       "caracter": "complementaria",
       "archivo": "datos_originales/recoleccion_puntos_verdes.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/recoleccion-en-puntos-verdes",
-      "fecha_actualizacion_dataset_indexada": "2024-08-28",
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": "2019-01-17 a 2020-09-13 (copias incluidas)",
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2024-08-28",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "reciclando_juntos",
       "caracter": "complementaria",
       "archivo": "datos_originales/reciclando_juntos_ruleros.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/reciclando_juntos_ruleros",
-      "fecha_actualizacion_dataset_indexada": null,
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": "Fechas históricas; un registro presenta fecha inválida",
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2026-09-28",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "ubicaciones_puntos_verdes",
       "caracter": "complementaria",
       "archivo": "datos_originales/localizacion_puntos_verdes.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/puntos_verdes_contenedores",
-      "fecha_actualizacion_dataset_indexada": "2026-09-28",
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": null,
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2026-11-03",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# Registro de comprobaciones — Corrientes Verde V4 (candidata)
+# Registro de comprobaciones — Corrientes Verde: Grupo 2
 
 **Proyecto académico independiente: Fernández Florencia y Ríos Oscar (Grupo 2).**
 
@@ -12,11 +12,27 @@
 
 ## Qué NO prueba este registro
 
-La prueba con bibliotecas externas simuladas **no acredita** el renderizado real de gráficos Chart.js, los mapas Leaflet, los mosaicos OSM ni el despliegue Vercel. El intento de navegar el servidor local mediante navegador automatizado fue bloqueado por restricciones del entorno. La validación visual y de interacción con bibliotecas reales debe realizarse en el **repositorio/proyecto de prueba** antes de reemplazar el sitio enviado al profesor.
+La prueba con bibliotecas externas simuladas **no acredita** el renderizado real de gráficos Chart.js, los mapas Leaflet, los mosaicos OSM ni el despliegue Vercel. El intento de navegar el servidor local mediante navegador automatizado fue bloqueado por restricciones del entorno. La validación visual y de interacción con las bibliotecas reales debe repetirse tras cada despliegue, en particular antes de utilizar el enlace público ante el profesor o las autoridades.
 
 ## Advertencias de fuente
 
 - La fecha de descarga de las copias originales no se encuentra documentada: **no inventarla**.
-- Las fichas del catálogo publicadas/indexadas pueden haber cambiado. Se debe revisar su vigencia al preparar la entrega.
+- Las fechas informadas por el Grupo 2 describen lo publicado en el portal municipal cuando lo consultaron. La eventual publicación de nuevos recursos no actualiza automáticamente los CSV del tablero.
 - El EPSG del WKT original se adoptó como hipótesis operacional **no certificada**.
 - La población por unidad y la proximidad de centroides son aproximaciones metodológicas explícitas, no conteos observados de personas por barrio ni acceso peatonal efectivo.
+
+
+## Comprobaciones de concentración y presentación de reserva
+
+- Fechas de portal proporcionadas por los autores: Espacios verdes y tres datasets de reciclaje. La copia integrada al proyecto se identifica por separado.
+- La reserva Santa Catalina aparece como categoría independiente en el ranking; otros espacios sin barrio declarado se conservan separados. La suma de superficies completa se mantiene.
+- El porcentaje de concentración sin reserva permanece en 45,702699 %.
+- Se incorporan descripciones en lenguaje accesible junto a los gráficos y definiciones técnicas desplegables.
+- Se incorpora enlace al repositorio definitivo del proyecto.
+
+## Revisión de metadatos de las fuentes
+
+- Fechas del portal para Barrios y Densidad poblacional completadas como 01/10/2025, procedentes de la consulta comunicada por el Grupo 2.
+- Renombradas en la interfaz las columnas «Última actualización en el portal» y «Copia incorporada al proyecto».
+- El archivo RENABAP no se utiliza ni forma parte del paquete.
+- La excepción de Santa Catalina conserva el identificador técnico 4000, pero lo muestra con nombre explicativo en los filtros.

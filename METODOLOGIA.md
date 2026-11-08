@@ -1,4 +1,4 @@
-# Metodología — Corrientes Verde V4
+# Metodología — Corrientes Verde: Grupo 2
 
 **Grupo 2 · Fernández Florencia y Ríos Oscar**  
 **Ámbito:** ciudad de Corrientes, Corrientes Capital.  
@@ -35,7 +35,7 @@ El valor **45,7027 %** corresponde a esta operación:
 3. Ordenar los grupos de mayor a menor y sumar las superficies de los cinco primeros.
 4. Dividir esa suma entre la superficie de todos los registros salvo GID 4000 y multiplicar por 100.
 
-Esto **no es** el porcentaje de superficie intersectada con las geometrías barriales. La vista «con reserva» utiliza exactamente el mismo procedimiento, incluyendo GID 4000 como registro **sin barrio declarado** cuando así figura en la fuente.
+Esto **no es** el porcentaje de superficie intersectada con las geometrías barriales. La vista «con reserva» usa el mismo procedimiento y presenta el registro 4000 por su **nombre de reserva**, como categoría propia. El barrio sigue **sin declarar** en el archivo; la reserva no se asigna al barrio Santa Catalina ni se agrupa con otros registros sin barrio declarado.
 
 ## 5. Asignación por CSV versus intersección geoespacial
 
@@ -76,4 +76,8 @@ python procesar_reciclaje.py
 python procesamiento/validar_resultados.py
 ```
 
-La última validación reconstruye los datos derivados desde las copias de origen y verifica resultados esperados. La página lee `datos_derivados/espacios_auditados.geojson`, `unidades_territoriales_agrupadas.geojson` e `indicadores_dashboard.json` y el `reciclaje.json`. Se publica como sitio estático en Vercel. **Ni un deploy ni una fecha de actualización indexada prueban que el CSV utilizado sea el más nuevo disponible.** La consulta de metadatos en vivo del portal debe repetirla el grupo antes de la entrega definitiva.
+La última validación reconstruye los datos derivados desde las copias de origen y verifica resultados esperados. La página lee `datos_derivados/espacios_auditados.geojson`, `unidades_territoriales_agrupadas.geojson` e `indicadores_dashboard.json` y el `reciclaje.json`. Se publica como sitio estático en Vercel. **Ni un deploy ni una fecha de actualización indicada en el portal prueban que el CSV utilizado sea el más nuevo disponible.** Las fechas de actualización comunicadas por el Grupo 2 quedan registradas separadamente de la copia realmente procesada.
+
+## 10. Actualizaciones del portal y datasets fuera de alcance
+
+Las fechas indicadas para Barrios y Densidad poblacional son **01/10/2025**, comunicadas por los autores tras consultar el Portal Municipal, y no equivalen al año del censo ni a la fecha individual de las filas. El dataset RENABAP, aportado únicamente como referencia, se mantiene fuera del análisis y no se procesa.

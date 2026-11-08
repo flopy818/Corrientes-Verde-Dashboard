@@ -1,36 +1,47 @@
-# Fuentes oficiales y vigencia de los datos
+# Fuentes, procedencia y fecha de actualización
 
-**Ámbito del proyecto:** Ciudad de Corrientes (Corrientes Capital), provincia de Corrientes.  
-**Autoría del análisis:** Grupo 2, Fernández Florencia y Ríos Oscar.  
-**Fecha de verificación de fichas mediante búsqueda del catálogo:** 7 de noviembre de 2026. El acceso directo al portal devolvió errores de red en algunas consultas, por lo que la fecha visible en un **resultado indexado no certifica la versión publicada en vivo** en el momento de la presentación.
+**Proyecto:** Corrientes Verde: Grupo 2 — Fernández Florencia y Ríos Oscar.  
+**Territorio:** ciudad de Corrientes, Corrientes Capital.  
+**Organismo que publica los datasets:** Municipalidad de la Ciudad de Corrientes, Portal de Datos Abiertos.
 
-## Archivos principales (utilizados en la auditoría territorial)
+## Cómo leer las fechas
 
-| Archivo local | Fuente oficial | Última actualización visible en fichas/indexación consultada | Descarga de la copia incluida | Observaciones |
+- **Última actualización en el portal:** fecha publicada en la ficha del recurso, **consultada e informada por los autores**. No representa necesariamente el día de las observaciones individuales del archivo ni constituye una comprobación automática realizada hoy.
+- **Copia incorporada al proyecto:** las copias de trabajo se integraron en este proyecto el **06/11/2026**. No es una certificación del instante exacto de la descarga original.
+- **Período de registros:** intervalo temporal representado por las filas del archivo, si dispone de fechas verificables.
+- **Publicación del dashboard:** puede cambiar al desplegar código nuevo sin que cambien los datos municipales.
+
+## Archivos utilizados y referencias oficiales
+
+| Conjunto | Papel | Última actualización en el portal | Archivo usado | Acceso oficial |
 |---|---|---|---|---|
-| `datos_originales/espacios_verdes.csv` | [Espacios verdes](https://datos.ciudaddecorrientes.gov.ar/dataset/espacios-verdes) | **01/10/2025** en resultado indexado; **pendiente de revalidación en vivo** | **No documentada** | La cadena `202510011132` del nombre del archivo original no es evidencia de fecha de descarga; se conservan 293 filas. |
-| `datos_originales/barrios.csv` | [Conjunto Barrios](https://datos.ciudaddecorrientes.gov.ar/dataset/barrios) · [recurso Barrios](https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/a3b229c5-08d8-4ca4-908e-d72b63eb295f) | Conjunto **26/03/2026**; recurso Barrios **01/10/2025** según fichas indexadas | **No documentada** | El conjunto incluye otras categorías territoriales; los dos niveles de fecha son distintos. |
-| `datos_originales/densidad_poblacional.csv` | [Densidad poblacional (recurso del conjunto Barrios)](https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/fe281850-2a92-4e61-81cd-4db3bb9598f5) | Recurso **01/10/2025** según ficha indexada | **No documentada** | Población censal histórica: verificar año exacto con documentación primaria antes de presentarlo como valor vigente. |
+| Espacios verdes | **Principal** | **03/11/2026** | `datos_originales/espacios_verdes.csv` | [Ficha municipal](https://datos.ciudaddecorrientes.gov.ar/dataset/espacios-verdes) |
+| Barrios | Complementario geográfico | **01/10/2025** | `datos_originales/barrios.csv` | [Ficha municipal](https://datos.ciudaddecorrientes.gov.ar/dataset/barrios) |
+| Densidad poblacional | Complementario censal | **01/10/2025** | `datos_originales/densidad_poblacional.csv` | [Recurso municipal](https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/fe281850-2a92-4e61-81cd-4db3bb9598f5) |
+| Recolección en puntos verdes | Complementario histórico | **28/08/2024** | `datos_originales/recoleccion_puntos_verdes.csv` | [Ficha municipal](https://datos.ciudaddecorrientes.gov.ar/dataset/recoleccion-en-puntos-verdes) |
+| Reciclando Juntos / Ruleros | Complementario histórico | **28/09/2026** | `datos_originales/reciclando_juntos_ruleros.csv` | [Ficha municipal](https://datos.ciudaddecorrientes.gov.ar/dataset/reciclando_juntos_ruleros) |
+| Localización de puntos verdes | Complementario cartográfico | **03/11/2026** | `datos_originales/localizacion_puntos_verdes.csv` | [Ficha municipal](https://datos.ciudaddecorrientes.gov.ar/dataset/puntos_verdes_contenedores) |
 
-**No se debe publicar «actualizado a noviembre de 2026» para estas copias sin comprobar que el recurso municipal y la copia coinciden.** Las fechas de las fichas pueden cambiar independientemente del contenido descargado.
+Las fechas corresponden a la consulta del portal comunicada por el Grupo 2. Los seis archivos **no se descargan ni se actualizan automáticamente cuando alguien abre la página**.
 
-## Archivos complementarios heredados de la versión V2
+## Qué período contienen las copias
 
-| Archivo local | Fuente oficial | Actualización de catálogo visible en búsqueda (revalidar en vivo) | Descarga de copia |
-|---|---|---|---|
-| `datos_originales/recoleccion_puntos_verdes.csv` | [Recolección en puntos verdes](https://datos.ciudaddecorrientes.gov.ar/dataset/recoleccion-en-puntos-verdes) | 28/08/2024 | No documentada |
-| `datos_originales/reciclando_juntos_ruleros.csv` | [Programa Reciclando Juntos](https://datos.ciudaddecorrientes.gov.ar/dataset/reciclando_juntos_ruleros) | Pendiente de verificación directa | No documentada |
-| `datos_originales/localizacion_puntos_verdes.csv` | [Puntos verdes](https://datos.ciudaddecorrientes.gov.ar/dataset/puntos_verdes_contenedores) | 28/09/2026 en la ficha indexada | No documentada |
+- **Espacios verdes y barrios:** sus geometrías no constituyen una serie histórica; la fecha de actualización del portal **no** debe presentarse como fecha de creación de todos los registros.
+- **Densidad poblacional:** fuente censal histórica; el año exacto de referencia no está acreditado por el archivo y sus metadatos conservados. La población por unidad se presenta como **estimación**, no como dato censal oficial por barrio.
+- **Recolección en puntos verdes:** la copia contiene observaciones históricas entre **17/01/2019 y 13/09/2020**.
+- **Reciclando Juntos:** las fechas son históricas y existe al menos un valor de fecha inválido en la copia; el procesamiento no debe convertirlo en una fecha imaginada.
+- **Localización de puntos verdes:** es una lista de ubicaciones, no un registro de actividad o vigencia en el presente.
 
-Las **fechas de observación dentro de los registros** de reciclaje son anteriores a las actualizaciones del catálogo. Tampoco son equivalentes a la fecha de publicación del dashboard.
+## Integridad de las copias y reproducción
 
-## Pruebas conservadas en el repositorio
+Las copias originales se conservan **sin modificaciones** en `datos_originales/`. La identidad de las copias usadas se documenta con sumas SHA-256 en [`datos_derivados/registro_fuentes_sha256.json`](../datos_derivados/registro_fuentes_sha256.json). Los scripts y las instrucciones para regenerar los indicadores figuran en [`README.md`](../README.md) y [`METODOLOGIA.md`](../METODOLOGIA.md).
 
-`datos_derivados/registro_fuentes_sha256.json` registra los hashes SHA-256 y el tamaño en bytes de las seis copias CSV utilizadas. El hash permite comprobar que se reproduce el cálculo con los mismos archivos, **no demuestra que sean la versión más nueva del portal**.
+La fecha **06/11/2026** se usa como incorporación de la copia al proyecto, **no** como fecha demostrada de descarga original del portal. Si un recurso oficial se actualiza después, esa publicación **no modifica automáticamente** los resultados aquí mostrados.
 
-## Comprobación antes de la presentación
+## Reserva Natural Municipal Santa Catalina
 
-1. Abrir cada enlace municipal y anotar fecha de publicación/actualización visible, URL del recurso y su nombre exacto.
-2. Comparar la versión disponible para descargar con la copia incluida, sin reemplazar el archivo histórico sin registro de cambio.
-3. Si hay datos nuevos, crear una versión nueva, regenerar las salidas y revisar todos los indicadores.
-4. Registrar las fechas reales de consulta y descarga, sin inventarlas retroactivamente.
+Se identifica por el **registro municipal 4000**. El campo `nombre_barrio` del registro de la reserva está vacío; para no confundirla con otras observaciones que tampoco declaran barrio, en la visualización **se muestra por su nombre propio**, separada de los registros pertenecientes al barrio Santa Catalina y de otros sin barrio declarado. Esta solución de presentación no implica una asignación territorial nueva.
+
+## Datos deliberadamente fuera del alcance
+
+**Arbolado urbano** es un dataset desarrollado por otro grupo. **RENABAP** fue compartido como referencia, pero no se analiza ni se incluye en los indicadores de este proyecto, cuyo eje principal es Espacios Verdes.

@@ -4,7 +4,7 @@
 **Cobertura:** Ciudad de Corrientes, Corrientes Capital.  
 **Origen:** copias de CSV municipales incluidas en este proyecto.  
 **Naturaleza:** resultados de elaboración académica, no estadísticas oficiales municipales.  
-**Estado:** indicadores estadísticos y geoespaciales reproducidos desde CSV e integrados en la interfaz V4; faltan certificación del CRS de origen, confirmación de fechas vigentes del portal y prueba visual integral en Vercel.
+**Estado:** indicadores estadísticos y geoespaciales reproducidos desde las copias CSV e integrados en la interfaz; siguen pendientes la certificación documental del CRS de origen y una prueba visual integral de cada despliegue. Las fechas de última actualización en el portal fueron proporcionadas por los autores y se muestran por separado de las copias utilizadas.
 
 ## Resultados que se obtienen al ejecutar el script
 
@@ -69,7 +69,7 @@ Al transformar los polígonos originales desde EPSG:22185 a WGS84, las coordenad
 1. Obtener o confirmar documentalmente el código EPSG exacto de la geometría WKT municipal (se utilizó EPSG:22185 como supuesto operacional coherente).
 2. Contrastar los metadatos actualizados del portal con la copia utilizada, guardando fecha de descarga real de cada nueva versión.
 3. Documentar de forma verificable la asociación administrativa de la reserva a Santa Catalina cuando corresponda, sin cambiar el dato crudo.
-4. Probar la interfaz V4 en el proyecto de Vercel de prueba, incluyendo filtros, exportación, comparación y visualización móvil.
-5. La V4 calcula proximidad geométrica por **centroides de radios** a 300/500 m: 207/319 radios y 228.639 habitantes de esos radios (64,5864 %) a ≤300 m; 271/319 radios y 311.291 habitantes (87,9341 %) a ≤500 m. **No mide accesibilidad real ni distancias individuales.** La proyección sigue pendiente de confirmación.
+4. Probar la interfaz en el proyecto Vercel publicado, incluyendo filtros, exportación, comparación y visualización móvil.
+5. El procesamiento calcula proximidad geométrica por **centroides de radios** a 300/500 m: 207/319 radios y 228.639 habitantes de esos radios (64,5864 %) a ≤300 m; 271/319 radios y 311.291 habitantes (87,9341 %) a ≤500 m. **No mide accesibilidad real ni distancias individuales.** La proyección sigue pendiente de confirmación.
 
 Este informe se genera a partir de resultados auditados con `procesar_territorio.py` y verificados por `validar_resultados.py`. Los detalles completos están en `datos_derivados/auditoria_territorial.json`.

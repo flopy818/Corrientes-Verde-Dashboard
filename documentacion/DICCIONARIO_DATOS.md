@@ -1,4 +1,4 @@
-# Diccionario de variables — Corrientes Verde V4
+# Diccionario de variables — Corrientes Verde: Grupo 2
 
 **Grupo 2: Fernández Florencia y Ríos Oscar.** Referencias completas: `FUENTES.md`.
 
@@ -25,7 +25,18 @@
 | `distancia_minima_todos_m` | Procesado | Distancia euclidiana del centroide censal al polígono más cercano de todo el inventario. |
 | `distancia_minima_sin_reserva_m` | Procesado | Misma distancia excluyendo GID 4000. |
 | `porcentaje_poblacion_archivo` | Procesado | Porcentaje de la suma de población censal de radios con centroides bajo un umbral; no equivale a accesibilidad real. |
-| `fecha_actualizacion_dataset_indexada` | Metadatos | Fecha encontrada en resultados indexados; **no certificada en vivo**. |
 | `fecha_descarga_copia` | Metadatos | Fecha en que se descargó el CSV usado; `null` cuando no está documentada. |
 
 El dataset de *Espacios verdes* incluye diferentes clases y sus áreas geométricas; la denominación «superficie registrada» no equivale a superficie vegetal.
+
+
+## Metadatos de procedencia y fechas
+
+| Campo | Definición |
+|---|---|
+| `fecha_actualizacion_portal` | Fecha de actualización de la ficha municipal comunicada por los autores. **No** es la fecha de observación de cada fila. |
+| `procedencia_fecha_portal` | Identifica si la fecha fue suministrada tras consulta de la ficha o si no se dispone de ella. |
+| `fecha_incorporacion_proyecto` | Fecha que registran las copias CSV integradas al paquete, separada de la fecha de descarga original. |
+| `fecha_descarga_copia` | Fecha de descarga original, cuando se conoce documentalmente; `null` si se desconoce. |
+
+El dashboard muestra como fecha principal de cada fuente **`fecha_actualizacion_portal`**, informada por los autores desde el Portal Municipal. Se distingue de la fecha en que se incorporó la copia de trabajo al proyecto.

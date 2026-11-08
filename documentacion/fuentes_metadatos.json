@@ -1,19 +1,18 @@
 {
   "ambito": "Ciudad de Corrientes, Corrientes Capital",
   "proyecto": "Corrientes Verde - Grupo 2 (Fernández Florencia y Ríos Oscar)",
-  "fecha_consulta_resultados_indexados": "2026-11-07",
-  "nota": "Fechas obtenidas de fichas indexadas del Portal Municipal. Los enlaces directos devolvieron HTTP 502 durante la consulta; estas fechas no certifican por sí solas el estado en vivo. La fecha de descarga de las copias conservadas no está documentada.",
+  "nota": "La última actualización en el portal corresponde a las fechas consultadas y comunicadas por el Grupo 2. No son necesariamente la fecha de los registros ni prueban que la copia CSV conserve una publicación posterior. Los archivos utilizados se incorporaron a este proyecto el 06/11/2026; no se acredita el instante exacto de descarga original.",
   "fuentes": [
     {
       "id": "espacios_verdes",
       "caracter": "principal",
       "archivo": "datos_originales/espacios_verdes.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/espacios-verdes",
-      "fecha_actualizacion_dataset_indexada": "2025-10-01",
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": null,
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2026-11-03",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "barrios",
@@ -21,55 +20,56 @@
       "archivo": "datos_originales/barrios.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios",
       "recurso_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/a3b229c5-08d8-4ca4-908e-d72b63eb295f",
-      "fecha_actualizacion_dataset_indexada": "2026-03-26",
-      "fecha_actualizacion_recurso_indexada": "2025-10-01",
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": null,
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2025-10-01",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "densidad_poblacional",
       "caracter": "complementaria",
       "archivo": "datos_originales/densidad_poblacional.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/fe281850-2a92-4e61-81cd-4db3bb9598f5",
-      "fecha_actualizacion_dataset_indexada": "2026-03-26",
-      "fecha_actualizacion_recurso_indexada": "2025-10-01",
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": "Censal histórico; año exacto por confirmar con fuente primaria",
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2025-10-01",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "puntos_verdes_reciclaje",
       "caracter": "complementaria",
       "archivo": "datos_originales/recoleccion_puntos_verdes.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/recoleccion-en-puntos-verdes",
-      "fecha_actualizacion_dataset_indexada": "2024-08-28",
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": "2019-01-17 a 2020-09-13 (copias incluidas)",
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2024-08-28",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "reciclando_juntos",
       "caracter": "complementaria",
       "archivo": "datos_originales/reciclando_juntos_ruleros.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/reciclando_juntos_ruleros",
-      "fecha_actualizacion_dataset_indexada": null,
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": "Fechas históricas; un registro presenta fecha inválida",
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2026-09-28",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     },
     {
       "id": "ubicaciones_puntos_verdes",
       "caracter": "complementaria",
       "archivo": "datos_originales/localizacion_puntos_verdes.csv",
       "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/puntos_verdes_contenedores",
-      "fecha_actualizacion_dataset_indexada": "2026-09-28",
-      "fecha_actualizacion_recurso_indexada": null,
       "fecha_descarga_copia": null,
       "periodo_efectivo_registros": null,
-      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+      "fecha_actualizacion_portal": "2026-11-03",
+      "procedencia_fecha_portal": "Fecha publicada en el Portal de Datos Abiertos municipal según consulta informada por el Grupo 2",
+      "fecha_incorporacion_proyecto": "2026-11-06"
     }
-  ]
+  ],
+  "fecha_copia_incorporada_proyecto": "2026-11-06"
 }

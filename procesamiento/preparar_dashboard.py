@@ -78,14 +78,20 @@ def main():
         })
     assert sum(x['cantidad'] for x in distribution)==293
 
-    # Repetir método de concentración por nombre_barrio DECLARADO, excluyendo SOLO 4000.
-    # Para la vista CON reserva se muestra explícitamente el grupo sin barrio declarado.
+    # Concentración por barrio DECLARADO. La reserva no tiene barrio declarado
+    # y se muestra como registro excepcional independiente, NO asignado a Santa Catalina.
+    # Los otros registros sin barrio declarado permanecen en su propia categoría.
     groups_all=defaultdict(float)
     groups_without=defaultdict(float)
+    reserve_label='Reserva Natural Santa Catalina'
+    missing_label='Otros registros sin barrio declarado'
     for f in spaces:
-        p=f['properties']; key=p['barrio_original'] or '(sin barrio declarado)'
-        groups_all[key]+=p['area_m2']
-        if p['gid']!=4000: groups_without[key]+=p['area_m2']
+        p=f['properties']; key=p['barrio_original'] or missing_label
+        if p['gid']==4000:
+            groups_all[reserve_label]+=p['area_m2']
+        else:
+            groups_all[key]+=p['area_m2']
+            groups_without[key]+=p['area_m2']
     def ranking(groups):
         order=sorted(groups.items(),key=lambda x:(-x[1],x[0]))
         total=sum(groups.values())
@@ -94,7 +100,7 @@ def main():
             'top5_pct':round(sum(v for _,v in order[:5])/total*100,6),
             'todos':[{'nombre':key,'area_m2':round(v,4)} for key,v in order]}
     c={'con_reserva':ranking(groups_all),'sin_reserva':ranking(groups_without),
-       'criterio':'Agrupación por nombre_barrio declarado en espacios_verdes.csv: superficie completa de cada geometría. No corresponde a intersecciones espaciales con límites territoriales.'}
+       'criterio':'Suma de superficies completas por nombre_barrio declarado en el CSV. Como excepción de presentación, la reserva GID 4000 se muestra por nombre propio, sin adjudicarle barrio; los restantes registros sin barrio declarado permanecen separados. No es una intersección geográfica.'}
     assert abs(c['sin_reserva']['top5_pct']-audit['concentracion_campo_barrio']['porcentaje_top_5'])<1e-4
 
     # Proximidad geométrica: radio censal como unidad; su población se asigna entera

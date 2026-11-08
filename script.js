@@ -31,12 +31,12 @@ function showSelection(f,kind){
  if(kind==='space'){
   $('selectionDesc').textContent=`${getSP(p)} · ${present(p.ubicacion_original)}`;
   $('selectionFacts').innerHTML=[
-    fact('ID municipal (gid)',p.gid),fact('Clasificación original',present(p.clasificacion_original)),
+    fact('Número del registro municipal',p.gid),fact('Clasificación original',present(p.clasificacion_original)),
     fact('Superficie geométrica',m2(p.area_m2)),fact('Barrio declarado',present(p.barrio_original)),
-    fact('ID barrio declarado',present(p.id_barrio_original)),fact('Ordenanza',present(p.ordenanza_original,'No consignada en el CSV')),
-    fact('Unidades intersectadas',p.numero_unidades_intersectadas),fact('Reserva Santa Catalina',p.es_reserva_santa_catalina?'Sí · gid 4000':'No')
+    fact('ID de unidad declarada',present(p.id_barrio_original)),fact('Ordenanza',present(p.ordenanza_original,'No consignada en el CSV')),
+    fact('Unidades intersectadas',p.numero_unidades_intersectadas),fact('¿Es la Reserva Natural Municipal Santa Catalina?',p.es_reserva_santa_catalina?'Sí · registro municipal 4000':'No')
   ].join('');
-  $('selectedMethod').textContent='Fuente: CSV municipal de Espacios Verdes. El barrio declarado y las intersecciones geográficas son datos diferentes.';
+  $('selectedMethod').textContent='La denominación y clasificación provienen del archivo municipal. El barrio declarado figura en el CSV; la intersección se calcula al superponer geometrías. Son dos datos distintos.';
  } else {
   $('selectionDesc').textContent=`${present(p.tipo_unidad)} · ID ${p.id_unidad} · ${p.cantidad_poligonos_fuente} polígono(s) fuente`;
   $('selectionFacts').innerHTML=[
@@ -48,7 +48,7 @@ function showSelection(f,kind){
     fact('Sin intersección',p.sin_interseccion?'Sí':'No'),
     fact('Polígonos originales',p.cantidad_poligonos_fuente),
   ].join('');
-  $('selectedMethod').textContent='Población: estimación areal de radios censales históricos, no estadística oficial por barrio. Cantidad asignada ≠ cantidad intersectada.';
+  $('selectedMethod').textContent='La población se estima repartiendo los datos de sectores censales por superficie. No es una cifra oficial por barrio; «asignados» e «intersectados» se calculan de manera diferente.';
  }
 }
 function featureWithin(f){
@@ -100,7 +100,7 @@ function buildMap(){
  spaceLayer=L.geoJSON({type:'FeatureCollection',features:spaces},{style:spaceStyle,onEachFeature:(f,layer)=>{
     const p=f.properties;
     layer.on('click',()=>showSelection(f,'space'));
-    layer.bindPopup(`<b>${esc(getName(p))}</b><br>${esc(getSP(p))}<br>${esc(m2(p.area_m2))}<br><small>GID ${esc(p.gid)}</small>`);
+    layer.bindPopup(`<b>${esc(getName(p))}</b><br>${esc(getSP(p))}<br>${esc(m2(p.area_m2))}<br><small>Registro municipal ${esc(p.gid)}</small>`);
  }}).addTo(map);
  const bounds=unitLayer.getBounds();if(bounds.isValid())map.fitBounds(bounds,{padding:[18,18]});
  mapLegend();setTimeout(()=>map.invalidateSize(),80);
@@ -129,7 +129,7 @@ function showResults(){
  const frag=document.createDocumentFragment();
  for(const {f,kind} of matches){
     const p=f.properties,b=document.createElement('button');b.type='button';b.className='result-item';
-    b.innerHTML=`<span><b>${esc(kind==='space'?getName(p):getUN(p))}</b><small>${kind==='space'?`${esc(getSP(p))} · GID ${esc(p.gid)}`:`Unidad · ID ${esc(p.id_unidad)}`}</small></span><span>Ver ↗</span>`;
+    b.innerHTML=`<span><b>${esc(kind==='space'?getName(p):getUN(p))}</b><small>${kind==='space'?`${esc(getSP(p))} · Registro ${esc(p.gid)}`:`Unidad · ID ${esc(p.id_unidad)}`}</small></span><span>Ver ↗</span>`;
     b.addEventListener('click',()=>zoomFeature(f,kind));frag.appendChild(b);
  }
  results.appendChild(frag);
@@ -221,7 +221,9 @@ function updateConcentration(){
  const without=$('concentrationReserve').checked;
  const o=dataset.concentracion[without?'sin_reserva':'con_reserva'];
  $('concentrationPct').textContent=`${f2(o.top5_pct)} %`;
- $('concentrationMethod').textContent=`Cinco denominaciones con mayor suma de superficies completas por el campo nombre_barrio del CSV. Denominador: ${f0(o.total_m2)} m² ${without?'(sin GID 4000)':'(con GID 4000)'}. No son áreas intersectadas; puede aparecer la categoría «sin barrio declarado».`;
+ $('concentrationMethod').textContent=without
+  ?`Se sumaron las superficies completas de cada espacio según el barrio declarado en el archivo municipal. Los cinco primeros reúnen ${f0(o.top5.reduce((s,x)=>s+x.area_m2,0))} m² sobre ${f0(o.total_m2)} m² del inventario sin la reserva. No se calculó por intersección de polígonos.`
+  :`El cálculo incluye la Reserva Natural Santa Catalina como grupo propio, porque su registro no declara barrio. La barra «SANTA CATALINA» corresponde a otros espacios que sí declaran ese barrio. Los restantes registros sin barrio declarado forman otro grupo. Los cinco primeros reúnen ${f0(o.top5.reduce((s,x)=>s+x.area_m2,0))} m² de ${f0(o.total_m2)} m². No implica asignar la reserva a un barrio.`;
  if(window.Chart)barChart('concentrationChart',o.top5.map(x=>x.nombre),o.top5.map(x=>x.area_m2),'m²');
 }
 function fillStats(){
@@ -257,15 +259,18 @@ function renderBoxPlot(){
 }
 function sources(){
  const src=dataset.fuentes,primary=src.find(x=>x.id==='espacios_verdes');
- const maybeDate=primary.fecha_actualizacion_dataset_indexada?primary.fecha_actualizacion_dataset_indexada+' (indexada; sin revalidar)':'Sin fecha confirmada';
- $('primaryDateSummary').textContent=`Espacios verdes · actualización publicada en índice: ${maybeDate}. Fecha de descarga de la copia: no documentada.`;
+ const date=v=> /^\d{4}-\d{2}-\d{2}$/.test(String(v||''))?v.split('-').reverse().join('/'):null;
+ const main=date(primary.fecha_actualizacion_portal);
+ $('primaryDateSummary').textContent=`Espacios verdes · última actualización en el portal municipal: ${main||'sin fecha documentada'}. Copia utilizada incorporada al proyecto: ${date(primary.fecha_incorporacion_proyecto)||'sin fecha registrada'}. Fuente: Portal de Datos Abiertos de la Municipalidad de Corrientes.`;
+ const titles={espacios_verdes:'Espacios verdes',barrios:'Barrios y unidades territoriales',densidad_poblacional:'Densidad poblacional',puntos_verdes_reciclaje:'Recolección en puntos verdes',reciclando_juntos:'Reciclando Juntos / Ruleros',ubicaciones_puntos_verdes:'Localización de puntos verdes'};
  $('sourceRows').innerHTML=src.map(x=>{
-    const date=x.fecha_actualizacion_dataset_indexada?`${esc(x.fecha_actualizacion_dataset_indexada)} <small class="subcell">Indexada · por revalidar</small>`:'No verificada';
-    const downloaded=x.fecha_descarga_copia?esc(x.fecha_descarga_copia):'No documentada';
-    const period=esc(present(x.periodo_efectivo_registros,'No documentado'));
-    const title=esc(x.id.replace(/_/g,' '));
+    const portalDate=date(x.fecha_actualizacion_portal);
+    const portal=portalDate?`${esc(portalDate)}<small class="subcell">Fecha informada por el Grupo 2 desde la ficha municipal</small>`:'No informada en esta versión';
+    const incorporated=date(x.fecha_incorporacion_proyecto)||'No registrada';
+    const period=esc(present(x.periodo_efectivo_registros,'Sin período documentado'));
+    const title=esc(titles[x.id]||x.id.replace(/_/g,' '));
     const safeLink=x.pagina_oficial?.startsWith('https://datos.ciudaddecorrientes.gov.ar/')?x.pagina_oficial:sourceUrl;
-    return `<tr><td><b>${title}</b><small class="subcell">${esc(x.archivo)}</small></td><td>${esc(x.caracter)}</td><td>${date}</td><td>${downloaded}</td><td>${period}</td><td><a href="${esc(safeLink)}" target="_blank" rel="noopener noreferrer">Abrir ↗</a></td></tr>`;
+    return `<tr><td><b>${title}</b><small class="subcell">${esc(x.archivo)}</small></td><td>${esc(x.caracter)}</td><td>${portal}</td><td>${esc(incorporated)}</td><td>${period}</td><td><a href="${esc(safeLink)}" target="_blank" rel="noopener noreferrer">Abrir fuente ↗</a></td></tr>`;
  }).join('');
 }
 function quality(){
@@ -273,14 +278,14 @@ function quality(){
  const items=[
  ['Nombres vacíos o S/N',q.nombre_nulo+q.nombre_sn,'16 vacíos + 126 con S/N; solo en el archivo'],
  ['Ordenanzas no consignadas',q.ordenanza_nula,'Campo ordenanza vacío en el CSV'],
- ['Sin intersección territorial',d.espacios_sin_interseccion.length,`GID ${d.espacios_sin_interseccion.join(', ')}`],
+ ['Sin intersección territorial',d.espacios_sin_interseccion.length,`Registros municipales ${d.espacios_sin_interseccion.join(', ')}`],
  ['Geometrías inválidas',q.geometrias_invalidas,'Control geométrico del procesador'],
  ['IDs territoriales repetidos',Object.keys(d.ids_barrios_repetidos).length,'Cada uno aparece en dos polígonos; se agrupan por ID'],
  ['Cobertura censal fuera de la unión',f0(d.poblacion.fuera_de_cobertura_de_union_estimado),'Habitantes equivalentes según reparto por superficie; no personas observadas']
  ];
  $('qualityGrid').innerHTML=items.map(([name,val,description])=>`<article><span>${esc(name)}</span><b>${esc(val)}</b><small>${esc(description)}</small></article>`).join('');
 }
-async function getJson(path){const r=await fetch(path);if(!r.ok)throw Error(`No se pudo cargar ${path}: HTTP ${r.status}`);return r.json();}
+async function getJson(path){const r=await fetch(path+"?actualizacion=20261108",{cache:"no-store"});if(!r.ok)throw Error(`No se pudo cargar ${path}: HTTP ${r.status}`);return r.json();}
 async function init(){
  try{
     if(!window.L)throw Error('No se cargó Leaflet; revisá la conexión.');
