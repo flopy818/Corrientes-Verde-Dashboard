@@ -1,0 +1,2301 @@
+{
+  "version_datos": "Archivos CSV originales incluidos en este repositorio; no actualización en tiempo real",
+  "proyecto": "Proyecto académico independiente - Grupo 2: Fernández Florencia y Ríos Oscar",
+  "auditoria": {
+    "analisis": "Ciudad de Corrientes (Corrientes Capital), provincia de Corrientes",
+    "caracter": "Proyecto académico independiente - Grupo 2: Fernández Florencia y Ríos Oscar",
+    "registros": {
+      "espacios": 293,
+      "espacios_gid_unicos": 293,
+      "poligonos_territoriales": 140,
+      "unidades_territoriales_ids_unicos": 138,
+      "radios_censales": 319,
+      "poblacion_total_archivo_censal": 354005.0
+    },
+    "superficies": {
+      "total_inventario_m2": 3976749.16,
+      "reserva_gid": 4000,
+      "reserva_nombre_csv": "RESERVA NATURAL MUNICIPAL SANTA CATALINA",
+      "reserva_m2": 2771672.794,
+      "sin_reserva_m2": 1205076.366,
+      "participacion_reserva_pct": 69.696948,
+      "interseccion_sumada_sobre_poligonos_fuente_m2": 1176585.696,
+      "interseccion_sumada_sobre_unidades_id_m2": 1176585.696
+    },
+    "unidades_sin_espacios": {
+      "ids_sin_asignacion_principal_csv": 65,
+      "filas_de_poligonos_sin_asignacion_principal": 66,
+      "ids_sin_superficie_intersectada": 65,
+      "filas_de_poligonos_sin_superficie_intersectada": 67,
+      "explicacion": "Las cantidades no son intercambiables: contar por id_barrios del CSV y medir intersecciones son dos métodos distintos; 140 filas incluyen IDs repetidos."
+    },
+    "espacios_sin_interseccion": [
+      261,
+      3005,
+      4000
+    ],
+    "espacios_intersectando_multiples_ids": [
+      20,
+      15,
+      27,
+      1078,
+      33,
+      167,
+      311,
+      319,
+      1022,
+      1081,
+      1083,
+      1055,
+      1056,
+      1057,
+      1058,
+      1071,
+      1096
+    ],
+    "ids_barrios_repetidos": {
+      "56": 2,
+      "23": 2
+    },
+    "ids_asignacion_espacios_no_existentes_en_tabla_territorial": [
+      0,
+      124
+    ],
+    "calidad_espacios": {
+      "nombre_nulo": 16,
+      "nombre_sn": 126,
+      "ordenanza_nula": 79,
+      "id_barrio_nulo": 2,
+      "nombre_barrio_nulo": 4,
+      "ubicacion_nula": 1,
+      "geometrias_invalidas": 0
+    },
+    "poblacion": {
+      "total_archivo": 354005.0,
+      "asignada_por_suma_de_unidades": 335817.447,
+      "asignada_a_union_geometrica": 335816.2048,
+      "fuera_de_cobertura_de_union_estimado": 18188.7952,
+      "potencial_doble_recuento_por_solapamientos_entre_unidades_estimado": 1.2421,
+      "metodo": "Fracción del área del radio dentro de la geometría territorial por población total del radio. Población estimada, no observada barrio a barrio."
+    },
+    "concentracion_campo_barrio": {
+      "criterio": "Agrupación nombre_barrio del archivo espacios_verdes.csv, área total de cada espacio, exceptuando solamente gid=4000; no es intersección espacial.",
+      "top_5": [
+        {
+          "nombre_barrio": "ARAZATI",
+          "superficie_m2": 147371.722
+        },
+        {
+          "nombre_barrio": "CAMBA CUA",
+          "superficie_m2": 133859.281
+        },
+        {
+          "nombre_barrio": "SANTA CATALINA",
+          "superficie_m2": 123158.926
+        },
+        {
+          "nombre_barrio": "ALDANA",
+          "superficie_m2": 82007.825
+        },
+        {
+          "nombre_barrio": "DR. MONTAÑA",
+          "superficie_m2": 64354.671
+        }
+      ],
+      "superficie_total_sin_reserva_m2": 1205076.366,
+      "superficie_agregada_en_cinco_m2": 550752.425,
+      "porcentaje_top_5": 45.702699,
+      "verificacion_suma": -0.0
+    },
+    "advertencias": [
+      "El CSV de espacios contiene WKT proyectado sin EPSG explícito. Se presupone EPSG:22185 para cálculo y cruces; requiere confirmación de fuente.",
+      "Una reserva cuyo polígono no intersecta territorios puede tener asociación administrativa distinta. NO se reasigna automáticamente.",
+      "La superficie del inventario incluye paseos, plazas, rotonda, playa y otras clasificaciones; no significa cobertura vegetal.",
+      "La población por unidad es estimación areal de datos censales históricos y no una medición demográfica por barrio.",
+      "La fecha de descarga de las copias originales no está documentada; no confundir nombre 20251001 con fecha de descarga."
+    ]
+  },
+  "clasificaciones": [
+    {
+      "tipo": "COSTANERA",
+      "cantidad": 3,
+      "superficie_total_m2": 98393.4997,
+      "min": 23894.2408,
+      "q1": 28758.9378,
+      "mediana": 33623.6349,
+      "media": 32797.8332,
+      "q3": 37249.6295,
+      "max": 40875.624,
+      "desvio_muestral": 8520.7573,
+      "bigote_inferior": 23894.2408,
+      "bigote_superior": 40875.624,
+      "atipicos_n": 0,
+      "atipicos_valores_m2": []
+    },
+    {
+      "tipo": "ESPACIO DEPORTIVO",
+      "cantidad": 14,
+      "superficie_total_m2": 41093.9081,
+      "min": 724.9594,
+      "q1": 1343.8445,
+      "mediana": 2168.1305,
+      "media": 2935.2791,
+      "q3": 3636.543,
+      "max": 9636.2445,
+      "desvio_muestral": 2435.0627,
+      "bigote_inferior": 724.9594,
+      "bigote_superior": 5366.3454,
+      "atipicos_n": 1,
+      "atipicos_valores_m2": [
+        9636.2445
+      ]
+    },
+    {
+      "tipo": "ESPACIO VERDE",
+      "cantidad": 111,
+      "superficie_total_m2": 2979202.3547,
+      "min": 114.2933,
+      "q1": 503.7828,
+      "mediana": 1086.6497,
+      "media": 26839.6609,
+      "q3": 2499.1256,
+      "max": 2771672.7936,
+      "desvio_muestral": 262906.0251,
+      "bigote_inferior": 114.2933,
+      "bigote_superior": 4916.3325,
+      "atipicos_n": 9,
+      "atipicos_valores_m2": [
+        7721.4008,
+        6261.8208,
+        5833.6481,
+        5973.9235,
+        15538.2793,
+        6181.0265,
+        10048.3019,
+        5736.2658,
+        2771672.7936
+      ]
+    },
+    {
+      "tipo": "PASEO",
+      "cantidad": 14,
+      "superficie_total_m2": 56109.0599,
+      "min": 199.9191,
+      "q1": 1330.3487,
+      "mediana": 3145.7362,
+      "media": 4007.79,
+      "q3": 3564.389,
+      "max": 16051.2155,
+      "desvio_muestral": 4334.8573,
+      "bigote_inferior": 199.9191,
+      "bigote_superior": 4531.6951,
+      "atipicos_n": 2,
+      "atipicos_valores_m2": [
+        16051.2155,
+        10911.0611
+      ]
+    },
+    {
+      "tipo": "PLAYA",
+      "cantidad": 4,
+      "superficie_total_m2": 81737.5531,
+      "min": 8255.0587,
+      "q1": 12906.8673,
+      "mediana": 20754.1817,
+      "media": 20434.3883,
+      "q3": 28281.7026,
+      "max": 31974.131,
+      "desvio_muestral": 10969.707,
+      "bigote_inferior": 8255.0587,
+      "bigote_superior": 31974.131,
+      "atipicos_n": 0,
+      "atipicos_valores_m2": []
+    },
+    {
+      "tipo": "PLAZA",
+      "cantidad": 104,
+      "superficie_total_m2": 650373.5743,
+      "min": 264.2723,
+      "q1": 1388.9879,
+      "mediana": 3212.4795,
+      "media": 6253.5921,
+      "q3": 7007.878,
+      "max": 62159.8328,
+      "desvio_muestral": 8741.9851,
+      "bigote_inferior": 264.2723,
+      "bigote_superior": 12447.61,
+      "atipicos_n": 9,
+      "atipicos_valores_m2": [
+        20207.9864,
+        23104.7594,
+        42036.2202,
+        62159.8328,
+        25756.3259,
+        25688.535,
+        24539.6905,
+        18055.8671,
+        19600.3206
+      ]
+    },
+    {
+      "tipo": "PLAZOLETA",
+      "cantidad": 42,
+      "superficie_total_m2": 68647.1437,
+      "min": 76.4608,
+      "q1": 608.6354,
+      "mediana": 1005.8829,
+      "media": 1634.4558,
+      "q3": 1914.746,
+      "max": 6141.6309,
+      "desvio_muestral": 1595.6712,
+      "bigote_inferior": 76.4608,
+      "bigote_superior": 3761.5492,
+      "atipicos_n": 5,
+      "atipicos_valores_m2": [
+        5239.0928,
+        5227.9104,
+        6141.6309,
+        5121.2494,
+        4906.8761
+      ]
+    },
+    {
+      "tipo": "ROTONDA",
+      "cantidad": 1,
+      "superficie_total_m2": 1192.0662,
+      "min": 1192.0662,
+      "q1": 1192.0662,
+      "mediana": 1192.0662,
+      "media": 1192.0662,
+      "q3": 1192.0662,
+      "max": 1192.0662,
+      "desvio_muestral": null,
+      "bigote_inferior": 1192.0662,
+      "bigote_superior": 1192.0662,
+      "atipicos_n": 0,
+      "atipicos_valores_m2": []
+    }
+  ],
+  "concentracion": {
+    "con_reserva": {
+      "total_m2": 3976749.1597,
+      "top5": [
+        {
+          "nombre": "(sin barrio declarado)",
+          "area_m2": 2777567.1278
+        },
+        {
+          "nombre": "ARAZATI",
+          "area_m2": 147371.7219
+        },
+        {
+          "nombre": "CAMBA CUA",
+          "area_m2": 133859.281
+        },
+        {
+          "nombre": "SANTA CATALINA",
+          "area_m2": 123158.926
+        },
+        {
+          "nombre": "ALDANA",
+          "area_m2": 82007.825
+        }
+      ],
+      "top5_pct": 82.076207,
+      "todos": [
+        {
+          "nombre": "(sin barrio declarado)",
+          "area_m2": 2777567.1278
+        },
+        {
+          "nombre": "ARAZATI",
+          "area_m2": 147371.7219
+        },
+        {
+          "nombre": "CAMBA CUA",
+          "area_m2": 133859.281
+        },
+        {
+          "nombre": "SANTA CATALINA",
+          "area_m2": 123158.926
+        },
+        {
+          "nombre": "ALDANA",
+          "area_m2": 82007.825
+        },
+        {
+          "nombre": "DR. MONTAÑA",
+          "area_m2": 64354.6713
+        },
+        {
+          "nombre": "17 DE AGOSTO",
+          "area_m2": 55068.1013
+        },
+        {
+          "nombre": "9 DE JULIO",
+          "area_m2": 30964.582
+        },
+        {
+          "nombre": "SAN ROQUE",
+          "area_m2": 24286.4484
+        },
+        {
+          "nombre": "PIRAYUI",
+          "area_m2": 24029.7906
+        },
+        {
+          "nombre": "SAN GERONIMO",
+          "area_m2": 23858.8084
+        },
+        {
+          "nombre": "CENTRO",
+          "area_m2": 23239.4669
+        },
+        {
+          "nombre": "CIUDAD DE ESTEPA",
+          "area_m2": 21855.2289
+        },
+        {
+          "nombre": "INDEPENDENCIA",
+          "area_m2": 21535.1711
+        },
+        {
+          "nombre": "DEPORTES",
+          "area_m2": 21313.7886
+        },
+        {
+          "nombre": "MALVINAS ARGENTINAS",
+          "area_m2": 20722.5651
+        },
+        {
+          "nombre": "HIPODROMO",
+          "area_m2": 20207.9864
+        },
+        {
+          "nombre": "JOSE MARIA PONCE",
+          "area_m2": 17741.8642
+        },
+        {
+          "nombre": "CIUDAD DE VALENCIA",
+          "area_m2": 15384.0815
+        },
+        {
+          "nombre": "NTRA SRA DE LA ASUNCION",
+          "area_m2": 15008.0028
+        },
+        {
+          "nombre": "ESPERANZA",
+          "area_m2": 14121.7587
+        },
+        {
+          "nombre": "LIBERTAD",
+          "area_m2": 13254.4901
+        },
+        {
+          "nombre": "LA CRUZ",
+          "area_m2": 12438.5886
+        },
+        {
+          "nombre": "CREMONTE",
+          "area_m2": 11933.4668
+        },
+        {
+          "nombre": "SANTA TERESITA",
+          "area_m2": 11848.4861
+        },
+        {
+          "nombre": "JARDIN",
+          "area_m2": 11454.358
+        },
+        {
+          "nombre": "PARAJE PERICHON",
+          "area_m2": 11200.0025
+        },
+        {
+          "nombre": "SAN ANTONIO",
+          "area_m2": 11116.489
+        },
+        {
+          "nombre": "JUAN XXIII",
+          "area_m2": 10719.4736
+        },
+        {
+          "nombre": "LA ROSADA",
+          "area_m2": 10604.0015
+        },
+        {
+          "nombre": "LAGUNA BRAVA",
+          "area_m2": 9586.8304
+        },
+        {
+          "nombre": "CONCEPCION",
+          "area_m2": 9523.9959
+        },
+        {
+          "nombre": "SANTA MARIA",
+          "area_m2": 9459.8611
+        },
+        {
+          "nombre": "APIPE",
+          "area_m2": 9014.2126
+        },
+        {
+          "nombre": "PIRAYUI NUEVO",
+          "area_m2": 9011.4955
+        },
+        {
+          "nombre": "BERON DE ASTRADA",
+          "area_m2": 8053.0064
+        },
+        {
+          "nombre": "SERANTES",
+          "area_m2": 7369.8814
+        },
+        {
+          "nombre": "YAPEYU",
+          "area_m2": 7241.2246
+        },
+        {
+          "nombre": "SAN IGNACIO",
+          "area_m2": 6965.9873
+        },
+        {
+          "nombre": "GALVAN",
+          "area_m2": 6849.9522
+        },
+        {
+          "nombre": "NUESTRA SRA DE LA POMPEYA",
+          "area_m2": 6697.3518
+        },
+        {
+          "nombre": "IRUPE",
+          "area_m2": 6141.6309
+        },
+        {
+          "nombre": "UNIVERSITARIO",
+          "area_m2": 5950.8271
+        },
+        {
+          "nombre": "MOLINA PUNTA",
+          "area_m2": 5860.7662
+        },
+        {
+          "nombre": "FRAY J DE LA QUINTANA",
+          "area_m2": 5679.8544
+        },
+        {
+          "nombre": "CACIQUE CANINDEYU",
+          "area_m2": 5368.9086
+        },
+        {
+          "nombre": "ZONA SUR PONCE",
+          "area_m2": 4647.9562
+        },
+        {
+          "nombre": "UNION",
+          "area_m2": 4443.4522
+        },
+        {
+          "nombre": "SANTA RITA NORTE",
+          "area_m2": 4432.9254
+        },
+        {
+          "nombre": "ALTA GRACIA",
+          "area_m2": 4267.9114
+        },
+        {
+          "nombre": "POPULAR",
+          "area_m2": 4265.5928
+        },
+        {
+          "nombre": "SAN JOSE",
+          "area_m2": 4029.0376
+        },
+        {
+          "nombre": "GUEMES INVICO",
+          "area_m2": 3923.3526
+        },
+        {
+          "nombre": "NTRA SRA DE GUADALUPE",
+          "area_m2": 3838.7998
+        },
+        {
+          "nombre": "CIUDADES CORRENTINAS",
+          "area_m2": 3814.3562
+        },
+        {
+          "nombre": "REPUBLICA DE VENEZUELA",
+          "area_m2": 3746.3675
+        },
+        {
+          "nombre": "CRISTOBAL COLON",
+          "area_m2": 3619.8938
+        },
+        {
+          "nombre": "VICTOR COLAS",
+          "area_m2": 3417.3299
+        },
+        {
+          "nombre": "BAÑADO NORTE",
+          "area_m2": 3144.4856
+        },
+        {
+          "nombre": "SAPUCAY",
+          "area_m2": 2772.2954
+        },
+        {
+          "nombre": "SAN MARCELO",
+          "area_m2": 2686.1707
+        },
+        {
+          "nombre": "JUAN DE VERA",
+          "area_m2": 2507.6878
+        },
+        {
+          "nombre": "AYUDA MUTUA",
+          "area_m2": 2336.904
+        },
+        {
+          "nombre": "SAN MARCOS",
+          "area_m2": 2040.5311
+        },
+        {
+          "nombre": "PUJOL",
+          "area_m2": 1926.3032
+        },
+        {
+          "nombre": "PARQUE BALNEARIO MOLINA PUNTA",
+          "area_m2": 1877.9674
+        },
+        {
+          "nombre": "INDUSTRIAL",
+          "area_m2": 1578.4275
+        },
+        {
+          "nombre": "ANTARTIDA ARGENTINA",
+          "area_m2": 1284.7985
+        },
+        {
+          "nombre": "ANAHI",
+          "area_m2": 1278.1099
+        },
+        {
+          "nombre": "PEDRO FERRE",
+          "area_m2": 1172.9819
+        },
+        {
+          "nombre": "SIN BARRIO",
+          "area_m2": 865.6663
+        },
+        {
+          "nombre": "VIRGEN DE LOS DOLORES",
+          "area_m2": 615.9643
+        },
+        {
+          "nombre": "BELGRANO",
+          "area_m2": 469.6963
+        },
+        {
+          "nombre": "SOL DE MAYO",
+          "area_m2": 395.3082
+        },
+        {
+          "nombre": "PRIMERA JUNTA",
+          "area_m2": 346.5457
+        }
+      ]
+    },
+    "sin_reserva": {
+      "total_m2": 1205076.3661,
+      "top5": [
+        {
+          "nombre": "ARAZATI",
+          "area_m2": 147371.7219
+        },
+        {
+          "nombre": "CAMBA CUA",
+          "area_m2": 133859.281
+        },
+        {
+          "nombre": "SANTA CATALINA",
+          "area_m2": 123158.926
+        },
+        {
+          "nombre": "ALDANA",
+          "area_m2": 82007.825
+        },
+        {
+          "nombre": "DR. MONTAÑA",
+          "area_m2": 64354.6713
+        }
+      ],
+      "top5_pct": 45.702699,
+      "todos": [
+        {
+          "nombre": "ARAZATI",
+          "area_m2": 147371.7219
+        },
+        {
+          "nombre": "CAMBA CUA",
+          "area_m2": 133859.281
+        },
+        {
+          "nombre": "SANTA CATALINA",
+          "area_m2": 123158.926
+        },
+        {
+          "nombre": "ALDANA",
+          "area_m2": 82007.825
+        },
+        {
+          "nombre": "DR. MONTAÑA",
+          "area_m2": 64354.6713
+        },
+        {
+          "nombre": "17 DE AGOSTO",
+          "area_m2": 55068.1013
+        },
+        {
+          "nombre": "9 DE JULIO",
+          "area_m2": 30964.582
+        },
+        {
+          "nombre": "SAN ROQUE",
+          "area_m2": 24286.4484
+        },
+        {
+          "nombre": "PIRAYUI",
+          "area_m2": 24029.7906
+        },
+        {
+          "nombre": "SAN GERONIMO",
+          "area_m2": 23858.8084
+        },
+        {
+          "nombre": "CENTRO",
+          "area_m2": 23239.4669
+        },
+        {
+          "nombre": "CIUDAD DE ESTEPA",
+          "area_m2": 21855.2289
+        },
+        {
+          "nombre": "INDEPENDENCIA",
+          "area_m2": 21535.1711
+        },
+        {
+          "nombre": "DEPORTES",
+          "area_m2": 21313.7886
+        },
+        {
+          "nombre": "MALVINAS ARGENTINAS",
+          "area_m2": 20722.5651
+        },
+        {
+          "nombre": "HIPODROMO",
+          "area_m2": 20207.9864
+        },
+        {
+          "nombre": "JOSE MARIA PONCE",
+          "area_m2": 17741.8642
+        },
+        {
+          "nombre": "CIUDAD DE VALENCIA",
+          "area_m2": 15384.0815
+        },
+        {
+          "nombre": "NTRA SRA DE LA ASUNCION",
+          "area_m2": 15008.0028
+        },
+        {
+          "nombre": "ESPERANZA",
+          "area_m2": 14121.7587
+        },
+        {
+          "nombre": "LIBERTAD",
+          "area_m2": 13254.4901
+        },
+        {
+          "nombre": "LA CRUZ",
+          "area_m2": 12438.5886
+        },
+        {
+          "nombre": "CREMONTE",
+          "area_m2": 11933.4668
+        },
+        {
+          "nombre": "SANTA TERESITA",
+          "area_m2": 11848.4861
+        },
+        {
+          "nombre": "JARDIN",
+          "area_m2": 11454.358
+        },
+        {
+          "nombre": "PARAJE PERICHON",
+          "area_m2": 11200.0025
+        },
+        {
+          "nombre": "SAN ANTONIO",
+          "area_m2": 11116.489
+        },
+        {
+          "nombre": "JUAN XXIII",
+          "area_m2": 10719.4736
+        },
+        {
+          "nombre": "LA ROSADA",
+          "area_m2": 10604.0015
+        },
+        {
+          "nombre": "LAGUNA BRAVA",
+          "area_m2": 9586.8304
+        },
+        {
+          "nombre": "CONCEPCION",
+          "area_m2": 9523.9959
+        },
+        {
+          "nombre": "SANTA MARIA",
+          "area_m2": 9459.8611
+        },
+        {
+          "nombre": "APIPE",
+          "area_m2": 9014.2126
+        },
+        {
+          "nombre": "PIRAYUI NUEVO",
+          "area_m2": 9011.4955
+        },
+        {
+          "nombre": "BERON DE ASTRADA",
+          "area_m2": 8053.0064
+        },
+        {
+          "nombre": "SERANTES",
+          "area_m2": 7369.8814
+        },
+        {
+          "nombre": "YAPEYU",
+          "area_m2": 7241.2246
+        },
+        {
+          "nombre": "SAN IGNACIO",
+          "area_m2": 6965.9873
+        },
+        {
+          "nombre": "GALVAN",
+          "area_m2": 6849.9522
+        },
+        {
+          "nombre": "NUESTRA SRA DE LA POMPEYA",
+          "area_m2": 6697.3518
+        },
+        {
+          "nombre": "IRUPE",
+          "area_m2": 6141.6309
+        },
+        {
+          "nombre": "UNIVERSITARIO",
+          "area_m2": 5950.8271
+        },
+        {
+          "nombre": "(sin barrio declarado)",
+          "area_m2": 5894.3342
+        },
+        {
+          "nombre": "MOLINA PUNTA",
+          "area_m2": 5860.7662
+        },
+        {
+          "nombre": "FRAY J DE LA QUINTANA",
+          "area_m2": 5679.8544
+        },
+        {
+          "nombre": "CACIQUE CANINDEYU",
+          "area_m2": 5368.9086
+        },
+        {
+          "nombre": "ZONA SUR PONCE",
+          "area_m2": 4647.9562
+        },
+        {
+          "nombre": "UNION",
+          "area_m2": 4443.4522
+        },
+        {
+          "nombre": "SANTA RITA NORTE",
+          "area_m2": 4432.9254
+        },
+        {
+          "nombre": "ALTA GRACIA",
+          "area_m2": 4267.9114
+        },
+        {
+          "nombre": "POPULAR",
+          "area_m2": 4265.5928
+        },
+        {
+          "nombre": "SAN JOSE",
+          "area_m2": 4029.0376
+        },
+        {
+          "nombre": "GUEMES INVICO",
+          "area_m2": 3923.3526
+        },
+        {
+          "nombre": "NTRA SRA DE GUADALUPE",
+          "area_m2": 3838.7998
+        },
+        {
+          "nombre": "CIUDADES CORRENTINAS",
+          "area_m2": 3814.3562
+        },
+        {
+          "nombre": "REPUBLICA DE VENEZUELA",
+          "area_m2": 3746.3675
+        },
+        {
+          "nombre": "CRISTOBAL COLON",
+          "area_m2": 3619.8938
+        },
+        {
+          "nombre": "VICTOR COLAS",
+          "area_m2": 3417.3299
+        },
+        {
+          "nombre": "BAÑADO NORTE",
+          "area_m2": 3144.4856
+        },
+        {
+          "nombre": "SAPUCAY",
+          "area_m2": 2772.2954
+        },
+        {
+          "nombre": "SAN MARCELO",
+          "area_m2": 2686.1707
+        },
+        {
+          "nombre": "JUAN DE VERA",
+          "area_m2": 2507.6878
+        },
+        {
+          "nombre": "AYUDA MUTUA",
+          "area_m2": 2336.904
+        },
+        {
+          "nombre": "SAN MARCOS",
+          "area_m2": 2040.5311
+        },
+        {
+          "nombre": "PUJOL",
+          "area_m2": 1926.3032
+        },
+        {
+          "nombre": "PARQUE BALNEARIO MOLINA PUNTA",
+          "area_m2": 1877.9674
+        },
+        {
+          "nombre": "INDUSTRIAL",
+          "area_m2": 1578.4275
+        },
+        {
+          "nombre": "ANTARTIDA ARGENTINA",
+          "area_m2": 1284.7985
+        },
+        {
+          "nombre": "ANAHI",
+          "area_m2": 1278.1099
+        },
+        {
+          "nombre": "PEDRO FERRE",
+          "area_m2": 1172.9819
+        },
+        {
+          "nombre": "SIN BARRIO",
+          "area_m2": 865.6663
+        },
+        {
+          "nombre": "VIRGEN DE LOS DOLORES",
+          "area_m2": 615.9643
+        },
+        {
+          "nombre": "BELGRANO",
+          "area_m2": 469.6963
+        },
+        {
+          "nombre": "SOL DE MAYO",
+          "area_m2": 395.3082
+        },
+        {
+          "nombre": "PRIMERA JUNTA",
+          "area_m2": 346.5457
+        }
+      ]
+    },
+    "criterio": "Agrupación por nombre_barrio declarado en espacios_verdes.csv: superficie completa de cada geometría. No corresponde a intersecciones espaciales con límites territoriales."
+  },
+  "proximidad": {
+    "descripcion": "Distancia euclidiana mínima del centroide geométrico de cada radio censal a un polígono del inventario. Población del radio acumulada si el centroide cumple el umbral.",
+    "advertencia": "NO representa residentes individuales dentro de 300/500 m, no representa rutas peatonales y no certifica acceso público. Se usa la población total del conjunto censal como denominador.",
+    "total_radios": 319,
+    "poblacion_total_archivo": 354005.0,
+    "umbrales": {
+      "con_reserva": {
+        "300": {
+          "radios_n": 207,
+          "poblacion_radiocensal": 228639.0,
+          "porcentaje_poblacion_archivo": 64.5864
+        },
+        "500": {
+          "radios_n": 271,
+          "poblacion_radiocensal": 311291.0,
+          "porcentaje_poblacion_archivo": 87.9341
+        }
+      },
+      "sin_reserva": {
+        "300": {
+          "radios_n": 207,
+          "poblacion_radiocensal": 228639.0,
+          "porcentaje_poblacion_archivo": 64.5864
+        },
+        "500": {
+          "radios_n": 271,
+          "poblacion_radiocensal": 311291.0,
+          "porcentaje_poblacion_archivo": 87.9341
+        }
+      }
+    }
+  },
+  "poligonos_territoriales": [
+    {
+      "numero_fila": 1,
+      "id_unidad": 111,
+      "nombre_unidad": "MERCEDITAS COLLANTES",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 98996.6544,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 2,
+      "id_unidad": 116,
+      "nombre_unidad": "SAMELA SUR",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 526675.5917,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 3,
+      "id_unidad": 139,
+      "nombre_unidad": "PARAJE PERICHON",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 7248022.1609,
+      "superficie_intersectada_m2": 11200.0025,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 4,
+      "id_unidad": 121,
+      "nombre_unidad": "SANTA RITA SUR",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 163558.3231,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 5,
+      "id_unidad": 122,
+      "nombre_unidad": "SANTA RITA NORTE",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 192861.4806,
+      "superficie_intersectada_m2": 4432.9254,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 6,
+      "id_unidad": 44,
+      "nombre_unidad": "JOSE MARIA PONCE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1879938.3493,
+      "superficie_intersectada_m2": 14283.9732,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 7,
+      "id_unidad": 133,
+      "nombre_unidad": "ZONA SUR PONCE",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 439246.8075,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 8,
+      "id_unidad": 17,
+      "nombre_unidad": "CENTRO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 775768.1484,
+      "superficie_intersectada_m2": 23239.4669,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 9,
+      "id_unidad": 154,
+      "nombre_unidad": "JOSE MARIA PAZ",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 239825.7101,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 10,
+      "id_unidad": 150,
+      "nombre_unidad": "PASO MARTINEZ",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 1947943.2181,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 11,
+      "id_unidad": 91,
+      "nombre_unidad": "SAPUCAY",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 411786.119,
+      "superficie_intersectada_m2": 2772.2954,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 12,
+      "id_unidad": 26,
+      "nombre_unidad": "CRISTOBAL COLON",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 75931.521,
+      "superficie_intersectada_m2": 3619.8938,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 13,
+      "id_unidad": 29,
+      "nombre_unidad": "DR NICOLINI",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 97900.3131,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 14,
+      "id_unidad": 45,
+      "nombre_unidad": "JUAN DE VERA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 574685.9024,
+      "superficie_intersectada_m2": 2507.6878,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 15,
+      "id_unidad": 73,
+      "nombre_unidad": "QUINTA FERRE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 232509.1873,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 16,
+      "id_unidad": 74,
+      "nombre_unidad": "REPUBLICA DE VENEZUELA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 86167.0277,
+      "superficie_intersectada_m2": 3746.3675,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 17,
+      "id_unidad": 78,
+      "nombre_unidad": "SAN BENITO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 527495.1914,
+      "superficie_intersectada_m2": 376.5229,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 18,
+      "id_unidad": 79,
+      "nombre_unidad": "SAN GERONIMO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 771008.3436,
+      "superficie_intersectada_m2": 23858.8084,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 19,
+      "id_unidad": 92,
+      "nombre_unidad": "SARGENTO CABRAL",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 252228.1347,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 20,
+      "id_unidad": 101,
+      "nombre_unidad": "VILLA CHIQUITA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 686916.231,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 21,
+      "id_unidad": 103,
+      "nombre_unidad": "VILLA PATONO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1108847.7435,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 22,
+      "id_unidad": 104,
+      "nombre_unidad": "VILLA RAQUEL",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 605556.6292,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 23,
+      "id_unidad": 105,
+      "nombre_unidad": "VIRGEN DE LOS DOLORES",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 117522.3735,
+      "superficie_intersectada_m2": 615.9643,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 24,
+      "id_unidad": 107,
+      "nombre_unidad": "YECOHA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 532936.6903,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 25,
+      "id_unidad": 56,
+      "nombre_unidad": "MOLINA PUNTA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 204969.3529,
+      "superficie_intersectada_m2": 5860.7662,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 26,
+      "id_unidad": 108,
+      "nombre_unidad": "BEJARANO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 989711.2772,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 27,
+      "id_unidad": 38,
+      "nombre_unidad": "GUEMES TRADICIONAL",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 195863.0498,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 28,
+      "id_unidad": 153,
+      "nombre_unidad": "ASENTAMIENTO PIRAYUI SUR",
+      "tipo_unidad": "ASENTAMIENTOS INFORMALES",
+      "area_poligono_m2": 398817.0278,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 29,
+      "id_unidad": 42,
+      "nombre_unidad": "IRUPE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 154759.16,
+      "superficie_intersectada_m2": 6141.6309,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 30,
+      "id_unidad": 132,
+      "nombre_unidad": "CLUB DE CAMPO DOS LUNAS-ESTE",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 466711.2073,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 31,
+      "id_unidad": 50,
+      "nombre_unidad": "LAS ROSAS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 80818.2845,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 32,
+      "id_unidad": 4,
+      "nombre_unidad": "ALDANA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 581508.7495,
+      "superficie_intersectada_m2": 79506.1837,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 33,
+      "id_unidad": 6,
+      "nombre_unidad": "ANAHI",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1018503.7319,
+      "superficie_intersectada_m2": 1278.1098,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 34,
+      "id_unidad": 8,
+      "nombre_unidad": "APIPE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 509483.2004,
+      "superficie_intersectada_m2": 9014.2127,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 35,
+      "id_unidad": 14,
+      "nombre_unidad": "BERON DE ASTRADA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 322998.9581,
+      "superficie_intersectada_m2": 8053.0064,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 36,
+      "id_unidad": 15,
+      "nombre_unidad": "CACIQUE CANINDEYU",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 357225.8181,
+      "superficie_intersectada_m2": 5368.9927,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 37,
+      "id_unidad": 51,
+      "nombre_unidad": "LIBERTAD",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1122692.4281,
+      "superficie_intersectada_m2": 13399.1601,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 38,
+      "id_unidad": 53,
+      "nombre_unidad": "LOMAS DEL MIRADOR",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 387221.3973,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 39,
+      "id_unidad": 10,
+      "nombre_unidad": "AYUDA MUTUA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 80313.4562,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 40,
+      "id_unidad": 13,
+      "nombre_unidad": "BELGRANO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 458581.2467,
+      "superficie_intersectada_m2": 469.6963,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 41,
+      "id_unidad": 24,
+      "nombre_unidad": "CONCEPCION",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 697812.301,
+      "superficie_intersectada_m2": 9523.9959,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 42,
+      "id_unidad": 56,
+      "nombre_unidad": "MOLINA PUNTA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 303020.5897,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 43,
+      "id_unidad": 18,
+      "nombre_unidad": "CICHERO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 76883.7342,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 44,
+      "id_unidad": 19,
+      "nombre_unidad": "CIUDAD DE AREQUIPA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 106181.465,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 45,
+      "id_unidad": 21,
+      "nombre_unidad": "CIUDADES CORRENTINAS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 861430.4255,
+      "superficie_intersectada_m2": 3814.3562,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 46,
+      "id_unidad": 22,
+      "nombre_unidad": "CODEPRO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 47914.3103,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 47,
+      "id_unidad": 23,
+      "nombre_unidad": "COLLANTES",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 15213.8683,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 48,
+      "id_unidad": 31,
+      "nombre_unidad": "EX AERO CLUB",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 268259.784,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 49,
+      "id_unidad": 54,
+      "nombre_unidad": "LUZ Y FUERZA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 45136.4923,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 50,
+      "id_unidad": 55,
+      "nombre_unidad": "MALVINAS ARGENTINAS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 368874.9367,
+      "superficie_intersectada_m2": 20722.481,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 51,
+      "id_unidad": 37,
+      "nombre_unidad": "GUEMES INVICO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 336037.7113,
+      "superficie_intersectada_m2": 3923.3527,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 52,
+      "id_unidad": 41,
+      "nombre_unidad": "INDUSTRIAL",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 208430.3422,
+      "superficie_intersectada_m2": 1578.4275,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 53,
+      "id_unidad": 47,
+      "nombre_unidad": "LA CRUZ",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 467130.9281,
+      "superficie_intersectada_m2": 12438.5886,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 54,
+      "id_unidad": 99,
+      "nombre_unidad": "VICTOR COLAS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 408552.805,
+      "superficie_intersectada_m2": 3417.3299,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 55,
+      "id_unidad": 57,
+      "nombre_unidad": "NIÑO JESUS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 521856.496,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 56,
+      "id_unidad": 61,
+      "nombre_unidad": "CIUDAD DE VALENCIA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 705974.4839,
+      "superficie_intersectada_m2": 15384.0814,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 57,
+      "id_unidad": 62,
+      "nombre_unidad": "PALOMA DE LA PAZ",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 168213.2841,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 58,
+      "id_unidad": 64,
+      "nombre_unidad": "PEDRO FERRE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 57087.4381,
+      "superficie_intersectada_m2": 2154.9797,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 59,
+      "id_unidad": 65,
+      "nombre_unidad": "PIO X",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 255681.5505,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 60,
+      "id_unidad": 66,
+      "nombre_unidad": "PIRAYUI",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1150803.0001,
+      "superficie_intersectada_m2": 20378.5606,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 61,
+      "id_unidad": 67,
+      "nombre_unidad": "PLACIDO MARTINEZ",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 223454.3787,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 62,
+      "id_unidad": 68,
+      "nombre_unidad": "POPULAR",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 302039.835,
+      "superficie_intersectada_m2": 4265.5928,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 63,
+      "id_unidad": 69,
+      "nombre_unidad": "PRIMERA JUNTA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 245203.2701,
+      "superficie_intersectada_m2": 346.5457,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 64,
+      "id_unidad": 71,
+      "nombre_unidad": "PUEBLO BUENOS AIRES",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 142097.1013,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 65,
+      "id_unidad": 72,
+      "nombre_unidad": "PUJOL",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 112960.01,
+      "superficie_intersectada_m2": 1926.3032,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 66,
+      "id_unidad": 110,
+      "nombre_unidad": "ESPERANZA",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 571398.3128,
+      "superficie_intersectada_m2": 14121.7586,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 67,
+      "id_unidad": 115,
+      "nombre_unidad": "LOMAS",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 479073.3264,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 68,
+      "id_unidad": 81,
+      "nombre_unidad": "SAN JORGE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 28594.5646,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 69,
+      "id_unidad": 82,
+      "nombre_unidad": "SAN JOSE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 558751.0742,
+      "superficie_intersectada_m2": 4029.0376,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 70,
+      "id_unidad": 83,
+      "nombre_unidad": "SAN MARCELO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 342805.7458,
+      "superficie_intersectada_m2": 2686.1707,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 71,
+      "id_unidad": 84,
+      "nombre_unidad": "SAN MARCOS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 138644.9343,
+      "superficie_intersectada_m2": 2040.5312,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 72,
+      "id_unidad": 85,
+      "nombre_unidad": "SAN MARTIN",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 691846.2697,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 73,
+      "id_unidad": 87,
+      "nombre_unidad": "SANTA MARIA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 221326.932,
+      "superficie_intersectada_m2": 9459.8611,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 74,
+      "id_unidad": 89,
+      "nombre_unidad": "SANTA ROSA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 436540.2168,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 75,
+      "id_unidad": 90,
+      "nombre_unidad": "SANTA TERESITA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 457811.7544,
+      "superficie_intersectada_m2": 11848.4861,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 76,
+      "id_unidad": 95,
+      "nombre_unidad": "SUR",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 692989.2415,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 77,
+      "id_unidad": 98,
+      "nombre_unidad": "UNIVERSITARIO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 549550.1642,
+      "superficie_intersectada_m2": 5973.4958,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 78,
+      "id_unidad": 117,
+      "nombre_unidad": "LAS DOS CURVAS",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 43526.1916,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 79,
+      "id_unidad": 125,
+      "nombre_unidad": "ASENTAMIENTO ERAGIA",
+      "tipo_unidad": "ASENTAMIENTOS INFORMALES",
+      "area_poligono_m2": 30633.1534,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 80,
+      "id_unidad": 119,
+      "nombre_unidad": "PARQUE CADENA NORTE",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 325212.9312,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 81,
+      "id_unidad": 120,
+      "nombre_unidad": "SAMELA NORTE",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 96563.1283,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 82,
+      "id_unidad": 114,
+      "nombre_unidad": "CREMONTE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 653668.9309,
+      "superficie_intersectada_m2": 13667.2637,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 83,
+      "id_unidad": 113,
+      "nombre_unidad": "DR. MONTAÑA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1210292.7533,
+      "superficie_intersectada_m2": 63263.3876,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 84,
+      "id_unidad": 112,
+      "nombre_unidad": "SANTA MARGARITA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1554549.5213,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 85,
+      "id_unidad": 127,
+      "nombre_unidad": "CLUB DE CAMPO (23566-U)",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 112409.7872,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 86,
+      "id_unidad": 128,
+      "nombre_unidad": "CLUB DE CAMPO BUENA VISTA I",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 110887.2114,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 87,
+      "id_unidad": 129,
+      "nombre_unidad": "CLUB DE CAMPO DON MANUEL",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 111330.6778,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 88,
+      "id_unidad": 131,
+      "nombre_unidad": "CLUB DE CAMPO LAGUNA PUEBLO NUEVO",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 116226.667,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 89,
+      "id_unidad": 134,
+      "nombre_unidad": "LAGUNA SOTO SUR",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 125586.7061,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 90,
+      "id_unidad": 135,
+      "nombre_unidad": "CLUB DE CAMPO CHE GENTE CUERA",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 85988.5163,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 91,
+      "id_unidad": 136,
+      "nombre_unidad": "CLUB DE CAMPO LOS FRUTALES",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 86256.8971,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 92,
+      "id_unidad": 137,
+      "nombre_unidad": "CLUB DE CAMPO LOS AZAHARES S.A.",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 146381.7984,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 93,
+      "id_unidad": 93,
+      "nombre_unidad": "SERANTES",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1147381.9268,
+      "superficie_intersectada_m2": 6961.3583,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 94,
+      "id_unidad": 138,
+      "nombre_unidad": "GOLF CLUB CORRIENTES",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 1120071.9821,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 95,
+      "id_unidad": 1,
+      "nombre_unidad": "17 DE agosto",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1560324.1638,
+      "superficie_intersectada_m2": 56769.5267,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 96,
+      "id_unidad": 20,
+      "nombre_unidad": "CIUDAD DE ESTEPA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 292456.2395,
+      "superficie_intersectada_m2": 21855.2287,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 97,
+      "id_unidad": 2,
+      "nombre_unidad": "3 DE abril",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1107413.46,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 98,
+      "id_unidad": 3,
+      "nombre_unidad": "9 DE julio",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1129872.5118,
+      "superficie_intersectada_m2": 31373.1052,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 99,
+      "id_unidad": 5,
+      "nombre_unidad": "ALTA GRACIA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 409024.2147,
+      "superficie_intersectada_m2": 4267.9113,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 100,
+      "id_unidad": 7,
+      "nombre_unidad": "ANTARTIDA ARGENTINA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 378554.7776,
+      "superficie_intersectada_m2": 1284.7985,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 101,
+      "id_unidad": 9,
+      "nombre_unidad": "ARAZATI",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 579271.5322,
+      "superficie_intersectada_m2": 138255.564,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 102,
+      "id_unidad": 11,
+      "nombre_unidad": "BANCARIO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 41027.2717,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 103,
+      "id_unidad": 12,
+      "nombre_unidad": "BAÑADO NORTE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 651330.8667,
+      "superficie_intersectada_m2": 3144.4856,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 104,
+      "id_unidad": 94,
+      "nombre_unidad": "SOR MARIA ASSUNTA PITTARO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 690877.5325,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 105,
+      "id_unidad": 96,
+      "nombre_unidad": "TAMBOR DE TACUARI",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 40692.8529,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 106,
+      "id_unidad": 16,
+      "nombre_unidad": "CAMBA CUA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1117583.3923,
+      "superficie_intersectada_m2": 112813.9716,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 107,
+      "id_unidad": 27,
+      "nombre_unidad": "DEPORTES",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 494410.2676,
+      "superficie_intersectada_m2": 27069.8802,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 108,
+      "id_unidad": 33,
+      "nombre_unidad": "FRAY J DE LA QUINTANA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1219358.0427,
+      "superficie_intersectada_m2": 9406.8176,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 109,
+      "id_unidad": 34,
+      "nombre_unidad": "GALVAN",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 573711.5904,
+      "superficie_intersectada_m2": 6849.9522,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 110,
+      "id_unidad": 35,
+      "nombre_unidad": "GENERAL MADARIAGA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 96215.2693,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 111,
+      "id_unidad": 36,
+      "nombre_unidad": "GRANADEROS",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 116775.5318,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 112,
+      "id_unidad": 39,
+      "nombre_unidad": "HIPODROMO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 719893.1996,
+      "superficie_intersectada_m2": 20207.9864,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 113,
+      "id_unidad": 40,
+      "nombre_unidad": "INDEPENDENCIA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 552837.9744,
+      "superficie_intersectada_m2": 21535.1711,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 114,
+      "id_unidad": 43,
+      "nombre_unidad": "SOL DE MAYO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 390385.5086,
+      "superficie_intersectada_m2": 395.3082,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 115,
+      "id_unidad": 46,
+      "nombre_unidad": "JUAN XXIII",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 776101.2936,
+      "superficie_intersectada_m2": 10719.4735,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 116,
+      "id_unidad": 48,
+      "nombre_unidad": "LA ROSADA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 773080.6509,
+      "superficie_intersectada_m2": 12217.9872,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 117,
+      "id_unidad": 49,
+      "nombre_unidad": "LAGUNA BRAVA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 674204.2327,
+      "superficie_intersectada_m2": 9586.8305,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 118,
+      "id_unidad": 58,
+      "nombre_unidad": "NTRA SRA DE GUADALUPE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 253786.9244,
+      "superficie_intersectada_m2": 3838.7998,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 119,
+      "id_unidad": 59,
+      "nombre_unidad": "NTRA SRA DE LA ASUNCION",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 732007.9859,
+      "superficie_intersectada_m2": 15008.0028,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 120,
+      "id_unidad": 60,
+      "nombre_unidad": "NUESTRA SRA DE LA POMPEYA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 373702.8453,
+      "superficie_intersectada_m2": 4940.4751,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 121,
+      "id_unidad": 63,
+      "nombre_unidad": "PARQUE BALNEARIO MOLINA PUNTA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 631272.614,
+      "superficie_intersectada_m2": 1877.9674,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 122,
+      "id_unidad": 70,
+      "nombre_unidad": "PROGRESO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 404042.7336,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 123,
+      "id_unidad": 75,
+      "nombre_unidad": "RESIDENCIAL SANTA ROSA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 137801.6644,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 124,
+      "id_unidad": 76,
+      "nombre_unidad": "RIO PARANA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1202393.8362,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 125,
+      "id_unidad": 77,
+      "nombre_unidad": "SAN ANTONIO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 740186.7521,
+      "superficie_intersectada_m2": 11116.4889,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 126,
+      "id_unidad": 80,
+      "nombre_unidad": "SAN IGNACIO",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 568997.4191,
+      "superficie_intersectada_m2": 6965.9872,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 127,
+      "id_unidad": 86,
+      "nombre_unidad": "SAN ROQUE",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1539584.9064,
+      "superficie_intersectada_m2": 24210.7153,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 128,
+      "id_unidad": 97,
+      "nombre_unidad": "UNION",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 294980.3068,
+      "superficie_intersectada_m2": 6780.3562,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 129,
+      "id_unidad": 100,
+      "nombre_unidad": "VILLA CELIA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 312810.1628,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 130,
+      "id_unidad": 102,
+      "nombre_unidad": "VILLA ONGAY",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 440434.5779,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 131,
+      "id_unidad": 106,
+      "nombre_unidad": "YAPEYU",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 193139.4761,
+      "superficie_intersectada_m2": 7241.2246,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 132,
+      "id_unidad": 109,
+      "nombre_unidad": "JARDIN",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 782575.5738,
+      "superficie_intersectada_m2": 11454.358,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 133,
+      "id_unidad": 130,
+      "nombre_unidad": "CLUB DE CAMPO LAS DOS LUNAS-OESTE",
+      "tipo_unidad": "CLUB DE CAMPO",
+      "area_poligono_m2": 464659.2765,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 134,
+      "id_unidad": 118,
+      "nombre_unidad": "PARQUE CADENA SUR",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 233465.0583,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 135,
+      "id_unidad": 152,
+      "nombre_unidad": "92 VIV SALVADOR MIQUERI",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 40175.6675,
+      "superficie_intersectada_m2": 4635.9486,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 136,
+      "id_unidad": 23,
+      "nombre_unidad": "COLLANTES",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 289482.1406,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 137,
+      "id_unidad": 140,
+      "nombre_unidad": "ZONA SUR PIRAYUI",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 1789057.2935,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 138,
+      "id_unidad": 123,
+      "nombre_unidad": "PIRAYUI NUEVO",
+      "tipo_unidad": "ZONAS EN ORDENAMIENTO",
+      "area_poligono_m2": 280932.2273,
+      "superficie_intersectada_m2": 13930.835,
+      "sin_interseccion": false
+    },
+    {
+      "numero_fila": 139,
+      "id_unidad": 126,
+      "nombre_unidad": "ASENTAMIENTO PUNTA TAITALO",
+      "tipo_unidad": "ASENTAMIENTOS INFORMALES",
+      "area_poligono_m2": 396901.2594,
+      "superficie_intersectada_m2": 0.0,
+      "sin_interseccion": true
+    },
+    {
+      "numero_fila": 140,
+      "id_unidad": 300,
+      "nombre_unidad": "SANTA CATALINA",
+      "tipo_unidad": "BARRIOS POR ORDENANZA",
+      "area_poligono_m2": 1335605.3063,
+      "superficie_intersectada_m2": 123158.926,
+      "sin_interseccion": false
+    }
+  ],
+  "fuentes": [
+    {
+      "id": "espacios_verdes",
+      "caracter": "principal",
+      "archivo": "datos_originales/espacios_verdes.csv",
+      "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/espacios-verdes",
+      "fecha_actualizacion_dataset_indexada": "2025-10-01",
+      "fecha_actualizacion_recurso_indexada": null,
+      "fecha_descarga_copia": null,
+      "periodo_efectivo_registros": null,
+      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+    },
+    {
+      "id": "barrios",
+      "caracter": "complementaria",
+      "archivo": "datos_originales/barrios.csv",
+      "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios",
+      "recurso_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/a3b229c5-08d8-4ca4-908e-d72b63eb295f",
+      "fecha_actualizacion_dataset_indexada": "2026-03-26",
+      "fecha_actualizacion_recurso_indexada": "2025-10-01",
+      "fecha_descarga_copia": null,
+      "periodo_efectivo_registros": null,
+      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+    },
+    {
+      "id": "densidad_poblacional",
+      "caracter": "complementaria",
+      "archivo": "datos_originales/densidad_poblacional.csv",
+      "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/barrios/archivo/fe281850-2a92-4e61-81cd-4db3bb9598f5",
+      "fecha_actualizacion_dataset_indexada": "2026-03-26",
+      "fecha_actualizacion_recurso_indexada": "2025-10-01",
+      "fecha_descarga_copia": null,
+      "periodo_efectivo_registros": "Censal histórico; año exacto por confirmar con fuente primaria",
+      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+    },
+    {
+      "id": "puntos_verdes_reciclaje",
+      "caracter": "complementaria",
+      "archivo": "datos_originales/recoleccion_puntos_verdes.csv",
+      "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/recoleccion-en-puntos-verdes",
+      "fecha_actualizacion_dataset_indexada": "2024-08-28",
+      "fecha_actualizacion_recurso_indexada": null,
+      "fecha_descarga_copia": null,
+      "periodo_efectivo_registros": "2019-01-17 a 2020-09-13 (copias incluidas)",
+      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+    },
+    {
+      "id": "reciclando_juntos",
+      "caracter": "complementaria",
+      "archivo": "datos_originales/reciclando_juntos_ruleros.csv",
+      "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/reciclando_juntos_ruleros",
+      "fecha_actualizacion_dataset_indexada": null,
+      "fecha_actualizacion_recurso_indexada": null,
+      "fecha_descarga_copia": null,
+      "periodo_efectivo_registros": "Fechas históricas; un registro presenta fecha inválida",
+      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+    },
+    {
+      "id": "ubicaciones_puntos_verdes",
+      "caracter": "complementaria",
+      "archivo": "datos_originales/localizacion_puntos_verdes.csv",
+      "pagina_oficial": "https://datos.ciudaddecorrientes.gov.ar/dataset/puntos_verdes_contenedores",
+      "fecha_actualizacion_dataset_indexada": "2026-09-28",
+      "fecha_actualizacion_recurso_indexada": null,
+      "fecha_descarga_copia": null,
+      "periodo_efectivo_registros": null,
+      "estado_verificacion": "pendiente cotejar en sitio oficial en vivo"
+    }
+  ]
+}

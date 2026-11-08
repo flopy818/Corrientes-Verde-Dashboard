@@ -1,0 +1,114 @@
+{
+  "analisis": "Ciudad de Corrientes (Corrientes Capital), provincia de Corrientes",
+  "caracter": "Proyecto académico independiente - Grupo 2: Fernández Florencia y Ríos Oscar",
+  "registros": {
+    "espacios": 293,
+    "espacios_gid_unicos": 293,
+    "poligonos_territoriales": 140,
+    "unidades_territoriales_ids_unicos": 138,
+    "radios_censales": 319,
+    "poblacion_total_archivo_censal": 354005.0
+  },
+  "superficies": {
+    "total_inventario_m2": 3976749.16,
+    "reserva_gid": 4000,
+    "reserva_nombre_csv": "RESERVA NATURAL MUNICIPAL SANTA CATALINA",
+    "reserva_m2": 2771672.794,
+    "sin_reserva_m2": 1205076.366,
+    "participacion_reserva_pct": 69.696948,
+    "interseccion_sumada_sobre_poligonos_fuente_m2": 1176585.696,
+    "interseccion_sumada_sobre_unidades_id_m2": 1176585.696
+  },
+  "unidades_sin_espacios": {
+    "ids_sin_asignacion_principal_csv": 65,
+    "filas_de_poligonos_sin_asignacion_principal": 66,
+    "ids_sin_superficie_intersectada": 65,
+    "filas_de_poligonos_sin_superficie_intersectada": 67,
+    "explicacion": "Las cantidades no son intercambiables: contar por id_barrios del CSV y medir intersecciones son dos métodos distintos; 140 filas incluyen IDs repetidos."
+  },
+  "espacios_sin_interseccion": [
+    261,
+    3005,
+    4000
+  ],
+  "espacios_intersectando_multiples_ids": [
+    20,
+    15,
+    27,
+    1078,
+    33,
+    167,
+    311,
+    319,
+    1022,
+    1081,
+    1083,
+    1055,
+    1056,
+    1057,
+    1058,
+    1071,
+    1096
+  ],
+  "ids_barrios_repetidos": {
+    "56": 2,
+    "23": 2
+  },
+  "ids_asignacion_espacios_no_existentes_en_tabla_territorial": [
+    0,
+    124
+  ],
+  "calidad_espacios": {
+    "nombre_nulo": 16,
+    "nombre_sn": 126,
+    "ordenanza_nula": 79,
+    "id_barrio_nulo": 2,
+    "nombre_barrio_nulo": 4,
+    "ubicacion_nula": 1,
+    "geometrias_invalidas": 0
+  },
+  "poblacion": {
+    "total_archivo": 354005.0,
+    "asignada_por_suma_de_unidades": 335817.447,
+    "asignada_a_union_geometrica": 335816.2048,
+    "fuera_de_cobertura_de_union_estimado": 18188.7952,
+    "potencial_doble_recuento_por_solapamientos_entre_unidades_estimado": 1.2421,
+    "metodo": "Fracción del área del radio dentro de la geometría territorial por población total del radio. Población estimada, no observada barrio a barrio."
+  },
+  "concentracion_campo_barrio": {
+    "criterio": "Agrupación nombre_barrio del archivo espacios_verdes.csv, área total de cada espacio, exceptuando solamente gid=4000; no es intersección espacial.",
+    "top_5": [
+      {
+        "nombre_barrio": "ARAZATI",
+        "superficie_m2": 147371.722
+      },
+      {
+        "nombre_barrio": "CAMBA CUA",
+        "superficie_m2": 133859.281
+      },
+      {
+        "nombre_barrio": "SANTA CATALINA",
+        "superficie_m2": 123158.926
+      },
+      {
+        "nombre_barrio": "ALDANA",
+        "superficie_m2": 82007.825
+      },
+      {
+        "nombre_barrio": "DR. MONTAÑA",
+        "superficie_m2": 64354.671
+      }
+    ],
+    "superficie_total_sin_reserva_m2": 1205076.366,
+    "superficie_agregada_en_cinco_m2": 550752.425,
+    "porcentaje_top_5": 45.702699,
+    "verificacion_suma": -0.0
+  },
+  "advertencias": [
+    "El CSV de espacios contiene WKT proyectado sin EPSG explícito. Se presupone EPSG:22185 para cálculo y cruces; requiere confirmación de fuente.",
+    "Una reserva cuyo polígono no intersecta territorios puede tener asociación administrativa distinta. NO se reasigna automáticamente.",
+    "La superficie del inventario incluye paseos, plazas, rotonda, playa y otras clasificaciones; no significa cobertura vegetal.",
+    "La población por unidad es estimación areal de datos censales históricos y no una medición demográfica por barrio.",
+    "La fecha de descarga de las copias originales no está documentada; no confundir nombre 20251001 con fecha de descarga."
+  ]
+}

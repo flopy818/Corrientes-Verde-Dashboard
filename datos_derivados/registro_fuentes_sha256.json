@@ -1,0 +1,35 @@
+{
+  "aclaracion": "El hash identifica el contenido de las copias incluidas; NO acredita su fecha de descarga ni la actualización del portal.",
+  "archivos": {
+    "espacios_verdes": {
+      "ruta_relativa": "datos_originales/espacios_verdes.csv",
+      "sha256": "f3485021f7bf4a35d4b4c520d8f3ef2109e0d7e2089a37bc8ea5c5f840eaab7e",
+      "bytes": 187189
+    },
+    "barrios": {
+      "ruta_relativa": "datos_originales/barrios.csv",
+      "sha256": "3ec47496e5b38d6f9f37df0b84cc0c229814b44dd7c70fe09add2b5b371030e8",
+      "bytes": 173267
+    },
+    "densidad_poblacional": {
+      "ruta_relativa": "datos_originales/densidad_poblacional.csv",
+      "sha256": "17cdcfe0f7c6a7ad67b585dd77fe7190954cd3c8b696779bb56ca4b6216b592c",
+      "bytes": 540285
+    },
+    "recoleccion_puntos_verdes": {
+      "ruta_relativa": "datos_originales/recoleccion_puntos_verdes.csv",
+      "sha256": "00ba645eedf2e1e52e63cb70d45bf79e7e3e5ab06bcdd2a856abef2f9f362b5f",
+      "bytes": 13798
+    },
+    "reciclando_juntos_ruleros": {
+      "ruta_relativa": "datos_originales/reciclando_juntos_ruleros.csv",
+      "sha256": "49b486fbe985c54d4f2d26bfe4ebbceb6833330d6cfc331ce84a5ff29848b2e5",
+      "bytes": 22016
+    },
+    "localizacion_puntos_verdes": {
+      "ruta_relativa": "datos_originales/localizacion_puntos_verdes.csv",
+      "sha256": "a6168df047a10b9fa6a6c04f19eddd56fcb7efbd1868cf5c22957188a0df813c",
+      "bytes": 1824
+    }
+  }
+}

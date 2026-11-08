@@ -1,72 +1,79 @@
-# Metodología y límites del Atlas Corrientes Verde
+# Metodología — Corrientes Verde V4
 
-**Naturaleza:** proyecto académico independiente. No es una publicación oficial de la Municipalidad de la Ciudad de Corrientes.
+**Grupo 2 · Fernández Florencia y Ríos Oscar**  
+**Ámbito:** ciudad de Corrientes, Corrientes Capital.  
+**Objeto principal:** descripción y análisis estadístico/geoespacial de los registros del dataset municipal **Espacios verdes**.  
+**Naturaleza:** trabajo académico independiente, sin inferencias causales ni recomendaciones administrativas.
 
-## Archivos de origen
+## 1. Archivos y procedencia
 
-- `datos_originales/espacios_verdes.csv`: vista municipal de espacios verdes (`_vw_espacio_verde__202510011132` en el nombre de archivo recibido; **no equivale necesariamente a fecha de descarga**).
-- `datos_originales/barrios.csv`: geometrías y denominaciones de barrios / unidades territoriales.
-- `datos_originales/densidad_poblacional.csv`: 319 radios censales, según documentación académica, con referencia al Censo 2010.
-- Fuente institucional de espacios verdes: https://datos.ciudaddecorrientes.gov.ar/dataset/espacios-verdes
+Se usan copias identificadas de CSV de espacios verdes (293 registros), barrios/unidades territoriales (140 polígonos), densidad poblacional/radios censales (319 registros), y tres archivos históricos de reciclaje. Se conservan como entradas en `datos_originales/`; su origen y fechas están en [`documentacion/FUENTES.md`](documentacion/FUENTES.md). El archivo `datos_derivados/registro_fuentes_sha256.json` identifica las copias principales por hash; la huella digital **no prueba la fecha de descarga**. El catálogo y el sitio no se consultan en tiempo real.
 
-La fecha exacta de descarga de cada CSV no se encuentra verificada en los archivos entregados.
+## 2. Identificadores y geometrías
 
-## Archivos derivados
+- Espacio: `gid` original, **293 valores únicos**.
+- Territorio: 140 polígonos fuente; los IDs `id_barrios=23` y `56` aparecen dos veces, dando **138 identificadores territoriales únicos**. Se conservan las 140 filas y se genera una unión geométrica por ID para gráficos y comparaciones.
+- Radio censal: `gid` original, 319 geometrías.
+- Las geometrías se verifican con Shapely: no se realizan reparaciones silenciosas de geometrías inválidas.
 
-- `espacios.geojson`: 293 polígonos, transformados a coordenadas WGS84 para visualización; atributos de superficie y tipología.
-- `barrios.geojson`: 140 unidades territoriales, con conteo asignado, superficie verde intersectada y población estimada.
-- `audit.json`: registro de controles del procesamiento geográfico previo.
+Las geometrías de espacios vienen en formato WKT proyectado, sin código EPSG explícito. **Para transformar barrios y radios a un sistema métrico común, se adopta provisoriamente EPSG:22185 (POSGAR 94 / Argentina 5)**, basado en consistencia con las coordenadas y visualizaciones previas, **pendiente de certificación por la fuente**. Los resultados que dependen de distancias y áreas llevan esa limitación. GeoJSON de visualización se transforma a WGS84 (EPSG:4326).
 
-Los archivos GeoJSON y el registro de auditoría se recuperaron de una versión anterior de trabajo. **Este paquete no incluye el programa original que produjo esos cálculos**; por tanto, se presentan como resultados de procesamiento previo pendientes de reproducción independiente, no como una auditoría nueva o una validación exhaustiva.
+## 3. Indicadores de superficie y categorías
 
-## Interpretación de indicadores
+`superficie_m2 = área geométrica del polígono WKT transformado a sistema métrico de trabajo`; superficie total = suma para los 293 registros. El inventario incluye distintas clases, por ejemplo plazas, plazoletas, paseos y rotonda: **superficie de inventario no significa cobertura vegetal**.
 
-- **Cantidad de espacios verdes:** número de geometrías del inventario, no total de vegetación de la ciudad.
-- **Superficie registrada:** suma de áreas de los polígonos de espacios verdes. El polígono mayor se presenta de forma diferenciada en el análisis por tipología; debe confirmarse su denominación exacta antes de usarlo como identificador automático de Santa Catalina.
-- **Barrios sin intersección:** unidades con `green = 0` en el cruce espacial previo. No implica ausencia absoluta de árboles, plazas o áreas naturales.
-- **Conteo asignado por barrio (`count`):** resultado de asignación territorial previa; no debe confundirse con número de intersecciones.
-- **Superficie intersectada (`green`):** m² de intersección entre inventario y unidad barrial. No equivale a la suma completa de polígonos asignados.
-- **Población estimada (`pop`):** distribución proporcional de habitantes de radios censales por superficie superpuesta a cada unidad barrial, asumiendo distribución homogénea dentro de cada radio.
-- **Tasa (`rate`):** m² verdes intersectados por habitante estimado; aproximación territorial, no indicador municipal oficial.
+Los grupos por tipología provienen de `clasificacion` del CSV. Se conserva el valor original y una versión normalizada de uso gráfico. Para cada clase: recuento, suma, mínimo, máximo, media, mediana, percentiles Q1/Q3 y desvío estándar muestral (con `ddof=1`, no calculado para grupos de tamaño 1). El diagrama de cajas utiliza bigotes de Tukey con límite de 1,5 × IQR, mostrando valores fuera de los bigotes como puntos; el eje es logarítmico en m².
 
-## Advertencias importantes
+## 4. Reserva Santa Catalina y concentración
 
-Según `audit.json`:
+La reserva es **GID 4000**, nombre textual «RESERVA NATURAL MUNICIPAL SANTA CATALINA». Excluir la reserva significa excluir exactamente ese ID, **no** excluir cualquier espacio grande. El campo territorial del registro está vacío y su polígono no intersecta los polígonos territoriales del archivo utilizado. **No se asigna automáticamente al barrio Santa Catalina**; cualquier relación administrativa adicional exige respaldo documental verificable.
 
-| Control | Resultado del procesamiento previo |
-|---|---:|
-| Polígonos de espacios verdes | 293 |
-| Unidades territoriales | 140 |
-| Radios censales | 319 |
-| Población censal total en fuente | 354.005 |
-| Población distribuida a unidades | 335.817 |
-| Unidades sin intersección verde | 67 |
-| Unidades sin espacios por asignación principal | 68 |
-| Espacios sin intersección | 3 |
-| Espacios que cruzan más de una unidad | 16 |
+El valor **45,7027 %** corresponde a esta operación:
 
-La diferencia entre población total y población distribuida requiere revisión; puede relacionarse con cobertura, superposiciones o geometrías. No se interpreta como población no cubierta sin un análisis reproducible. El informe docente anterior mencionaba 65 unidades sin espacios; los 67 corresponden a un criterio **distinto** (`green = 0`) en los archivos derivados. No deben presentarse como una misma cifra.
+1. Excluir el registro GID 4000.
+2. Agrupar **superficies completas** de los otros registros por el **campo `nombre_barrio` del propio CSV** (categoría sin barrio declarado explícita cuando corresponda).
+3. Ordenar los grupos de mayor a menor y sumar las superficies de los cinco primeros.
+4. Dividir esa suma entre la superficie de todos los registros salvo GID 4000 y multiplicar por 100.
 
-## Proyección y medición
+Esto **no es** el porcentaje de superficie intersectada con las geometrías barriales. La vista «con reserva» utiliza exactamente el mismo procedimiento, incluyendo GID 4000 como registro **sin barrio declarado** cuando así figura en la fuente.
 
-La fuente de espacios verdes contiene geometrías proyectadas en Gauss-Krüger faja 5; la visualización web utiliza WGS84. Para reproducir las superficies y cruces se requiere especificar el código EPSG exacto, verificar la transformación y medir en sistema métrico. El código de reprocesamiento geográfico no está incluido en este paquete.
+## 5. Asignación por CSV versus intersección geoespacial
 
-## Alcance de la revisión docente
+**Registros asignados:** se cuentan los espacios por su columna `id_barrios`.  
+**Registros intersectados:** se cuenta todo espacio cuya geometría tenga intersección de área **superior a 0,01 m²** con la unidad, tras agrupar los polígonos por ID.  
+**Superficie intersectada:** suma de áreas geométricas del fragmento de cada espacio que solapa cada unidad territorial.
 
-Se incorporan: búsqueda de todas las unidades, mapa con unidades sin intersección, m²/hab. estimados, sección metodológica, distinción del polígono de gran superficie, coherencia numérica local y eliminación de referencias a Sprint 1 / Qué sigue.
+Un espacio puede aparecer en más de una unidad intersectada. La suma por unidades puede repetir superficies si los polígonos territoriales se superponen. No se interpreta «sin intersección registrada» como ausencia física de vegetación o espacios públicos. La documentación reporta por separado **65 IDs sin asignación principal**, **65 IDs sin intersección** y **67 polígonos de 140 sin intersección**.
 
-**No se recreó la sección «Reciclando Juntos» ni su serie mensual:** ese dataset no está entre los tres CSV suministrados. Inventar kilos, meses o localizaciones sería metodológicamente incorrecto. Para recuperarla se necesita la fuente original, incluidos registros de eventos y puntos verdes. Tampoco se calcula población a 300/500 m de un espacio verde sin reprocesamiento reproducible de radios y distancias.
+## 6. Población por unidad: aproximación areal
 
-## Cómo reproducir el sitio
+Por cada radio censal, se calcula la proporción del área del radio que intersecta cada unidad territorial. Se multiplica esa proporción por `total_poblacion` del radio y se suman aportes. **Esto supone distribución homogénea de la población dentro de cada radio**; es una estimación espacial, no un conteo de personas ni una estadística oficial por barrio.
 
-La interfaz funciona leyendo `espacios.geojson` y `barrios.geojson` mediante `fetch`. Debe servirse por HTTP (Vercel o servidor local), no abrirse mediante `file://`. El mapa base, Chart.js y Leaflet se cargan desde proveedores externos; se requiere Internet.
+Se mantiene el total de 354.005 habitantes que figura en el archivo censal completo, y se contabiliza por separado la cobertura de la **unión** de territorios (335.816,20 habitantes equivalentes) y el equivalente fuera de esa unión (18.188,80). Al sumar estimaciones individuales por unidad se obtiene 335.817,45 por aproximadamente 1,24 de solapamiento; no se oculta esta discrepancia.
 
+`m²/habitante estimado = superficie verde intersectada de la unidad / población estimada areal`, cuando la población es mayor que cero. No equivale a accesibilidad efectiva, calidad de los espacios, ni disponibilidad de vegetación.
 
-## Ampliación: reciclaje histórico (versión de auditoría)
+## 7. Proximidad geométrica de centroides
 
-- **Recolección en puntos verdes:** 213 registros del archivo recibido, del 17/01/2019 al 13/09/2020. Los kilogramos se interpretan con coma decimal. Eventos: 4.303,163 kg de un total de 8.437,213 kg (51,00 %). Incluye 50 kg de registros sin punto identificado. Los meses sin registros se muestran como faltantes (`null`), no como cero.
-- **Reciclando Juntos / Ruleros:** 293 registros; 160 de modalidad «a puerta» y 133 «rulero». Se calcula por separado, sin sumar las dos fuentes por posible solapamiento. `cantidad_domicilios` está vacío en todos los registros; se detectó una fecha no interpretable (`0202/09/06`).
-- **Localización de puntos verdes:** 22 ubicaciones del archivo municipal. No se presupone que estén activas actualmente. Solo se vinculan kg históricos a nombres coincidentes sin ambigüedad. No se vincula «Bº Santa Catalina» con el registro de recolección «Santa Catalina» sin documentación adicional.
-- **Reproducibilidad:** ejecutar `python procesar_reciclaje.py` (requiere pandas) para regenerar `reciclaje.json`.
-- **Fecha de actualización del portal vs. fecha de observación:** las fechas de publicación y actualización del catálogo no son fechas de los eventos de recolección. La fecha exacta de descarga de los CSV no está documentada.
-- **Pendientes de auditoría:** conciliación de 65/67/68 unidades sin verde; reproducción integral del cruce de población; asignación documental de la reserva Santa Catalina; comparación territorial de concentración.
+Para los **319 radios censales** se calcula su centroide geométrico, luego su **distancia euclidiana mínima** al polígono más cercano del inventario. Se repite con todos los espacios y con GID 4000 excluido. Se cuenta cuántos centroides quedan a **300 m y 500 m** o menos, y se suma **toda la población censal de los radios correspondientes**. Denominador del porcentaje: 354.005 habitantes del archivo censal.
+
+**Interpretación permitida:** «porcentaje de la población del archivo contenida en radios cuyos centroides se encuentran a ≤500 m de un polígono del inventario».  
+**Interpretaciones prohibidas:** «porcentaje de residentes que viven a 500 m de una plaza», «acceso peatonal a un espacio», «porcentaje de población cubierta», porque este procedimiento no identifica domicilios, entradas habilitadas, rutas transitables ni uso efectivo del espacio. El indicador es descriptivo y aproximado. La diferencia con/sin reserva resulta nula en estas copias; el cálculo se mantiene en ambas vistas para hacerlo verificable.
+
+## 8. Reciclaje: complemento histórico independiente
+
+`procesar_reciclaje.py` genera `reciclaje.json` a partir de los CSV de recolección en puntos verdes, Reciclando Juntos y localización. Distingue eventos y otras modalidades. El total de un dataset no se suma al otro sin certificar independencia de observaciones. Los meses sin registros se dejan en `null`, no se asignan arbitrariamente a 0. La cobertura temporal del primer CSV es de 2019 a 2020. La lista geográfica no certifica actividad actual de puntos verdes.
+
+## 9. Reproducción y control de vigencia
+
+Ejecutar:
+
+```bash
+python -m pip install -r procesamiento/requirements.txt
+python procesamiento/procesar_territorio.py
+python procesamiento/preparar_dashboard.py
+python procesar_reciclaje.py
+python procesamiento/validar_resultados.py
+```
+
+La última validación reconstruye los datos derivados desde las copias de origen y verifica resultados esperados. La página lee `datos_derivados/espacios_auditados.geojson`, `unidades_territoriales_agrupadas.geojson` e `indicadores_dashboard.json` y el `reciclaje.json`. Se publica como sitio estático en Vercel. **Ni un deploy ni una fecha de actualización indexada prueban que el CSV utilizado sea el más nuevo disponible.** La consulta de metadatos en vivo del portal debe repetirla el grupo antes de la entrega definitiva.
