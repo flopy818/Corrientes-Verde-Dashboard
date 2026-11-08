@@ -321,7 +321,12 @@ async function init(){
     $('proximityReserve').addEventListener('change',proximity);
     $('excludeReserve').addEventListener('change',updateAreaChart);
     $('concentrationReserve').addEventListener('change',updateConcentration);
- }catch(err){console.error('Corrientes Verde:',err);$('error').hidden=false;$('error').textContent=`No fue posible completar la carga: ${err.message}. Ejecutá un servidor local (python -m http.server 8000) o publicá en Vercel; abrir index.html mediante file:// puede bloquear las lecturas.`;}
+ }catch(err){
+    console.error('Corrientes Verde:',err);
+    const extra=location.protocol==='file:'?' Para abrirlo en tu equipo, utilizá un servidor local.':' Si persiste después de actualizar, revisá el despliegue y los archivos publicados.';
+    $('error').hidden=false;
+    $('error').textContent=`No pudimos mostrar todos los datos. Detalle técnico: ${err.message}.${extra}`;
+ }
 }
 $('menuToggle').addEventListener('click',()=>{const bar=document.querySelector('.sidebar');$('menuToggle').setAttribute('aria-expanded',String(bar.classList.toggle('open')));});
 document.querySelectorAll('.side-nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open');$('menuToggle').setAttribute('aria-expanded','false');}));
